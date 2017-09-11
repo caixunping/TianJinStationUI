@@ -1,0 +1,41 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ig="http://schemas.infragistics.com/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" x:Name="MainWindows" mc:Ignorable="d" x:Class="MainUI.MainWindow"
+        Title="MainWindow" Height="1024" Width="1280" WindowStyle="None" WindowStartupLocation="CenterScreen" Activated="Window_Activated" Loaded="Window_Loaded">
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded"/>
+    </Window.Triggers>
+    <Grid Background="#FFF7F7F7" Height="1024" Width="1280" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="283*"/>
+            <ColumnDefinition Width="997*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="68*"/>
+            <RowDefinition Height="149*"/>
+            <RowDefinition Height="807*"/>
+        </Grid.RowDefinitions>
+        <Border x:Name="Border_Top" BorderBrush="#FFD9DEE4" BorderThickness="1" Background="#FFEDEDED" HorizontalAlignment="Left" Width="990" Grid.Column="1"/>
+        <Border x:Name="Border_Left" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1014" VerticalAlignment="Top" Width="284" Grid.RowSpan="3" Background="#FF2A3F54" Grid.ColumnSpan="2"/>
+        <Image x:Name="config_tool_png" Source="config_tool.png" Stretch="Fill" Width="46" HorizontalAlignment="Left" Margin="69.5,0,0,21.5" Height="46" Grid.Row="2" VerticalAlignment="Bottom" MouseLeftButtonDown="config_tool_png_MouseLeftButtonDown"/>
+        <Label HorizontalAlignment="Left" Margin="137,41.997,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="24" Foreground="Gainsboro" Height="41.677" Width="82"/>
+        <Label Content="系统管理员" HorizontalAlignment="Left" Margin="137,83.674,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="24" Foreground="White" Height="41.677" Width="130"/>
+        <Image Margin="10,28,163,0" Source="people_1019.0009794319px_1152260_easyicon.net.png" Stretch="Fill" Grid.Row="1" Height="110.108" VerticalAlignment="Top"/>
+        <Image Margin="756.5,7.696,25,7.5" Source="Image2.png" Stretch="Fill" Grid.Column="1"/>
+        <Label x:Name="label_main" Content="    综述" HorizontalAlignment="Left" Margin="0,18,0,0" Grid.Row="2" VerticalAlignment="Top" FontSize="29.333" Foreground="White" Height="52.5" Width="283" MouseMove="Label_MouseMove" MouseLeave="Label_MouseLeave" Background="#FF2A3F54" VerticalContentAlignment="Center" MouseLeftButtonDown="label_main_MouseLeftButtonDown"/>
+        <Border BorderThickness="1" Height="5" VerticalAlignment="Top" Background="White" Margin="0,65.833,0,0" Grid.Row="2"/>
+        <Label Content="辐射环境自动监测站" HorizontalAlignment="Left" Margin="10,16.323,0,0" VerticalAlignment="Top" FontSize="24" Foreground="White" Height="41.677" Width="263" HorizontalContentAlignment="Center"/>
+        <ContentControl Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="1,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="936" Width="997" x:Name="C1" Grid.RowSpan="2"/>
+        <Label x:Name="label_131" Content="γ剂量率仪" HorizontalAlignment="Left" Margin="0,71.5,0,0" Grid.Row="2" VerticalAlignment="Top" FontSize="24" Foreground="White" Height="51" Width="283" MouseMove="Label_131_MouseMove" MouseLeave="Label_131_MouseLeave" Background="#FF2A3F54" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" MouseLeftButtonDown="label_131_MouseLeftButtonDown"/>
+        <Label x:Name="label_weather" Content="自动气象站" HorizontalAlignment="Left" Margin="0,174.689,-1,0" Grid.Row="2" VerticalAlignment="Top" FontSize="24" Foreground="White" Height="51" Width="284" MouseMove="Label_weather_MouseMove" MouseLeave="Label_weather_MouseLeave" Background="#FF2A3F54" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" MouseLeftButtonDown="label_weather_MouseLeftButtonDown"/>
+        <Label x:Name="label_QRJ" Content="气溶胶采样器" HorizontalAlignment="Left" Margin="0,226.022,-1,0" Grid.Row="2" VerticalAlignment="Top" FontSize="24" Foreground="White" Height="51" Width="284" MouseMove="Label_QRJ_MouseMove" MouseLeave="Label_QRJ_MouseLeave" Background="#FF2A3F54" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" MouseLeftButtonDown="label_QRJ_MouseLeftButtonDown"/>
+        <Label x:Name="label_Dian" Content="碘采样器" HorizontalAlignment="Left" Margin="0,277.191,-1,0" Grid.Row="2" VerticalAlignment="Top" FontSize="24" Foreground="White" Height="51" Width="284" MouseMove="Label_Dian_MouseMove" MouseLeave="Label_Dian_MouseLeave" Background="#FF2A3F54" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" MouseLeftButtonDown="label_Dian_MouseLeftButtonDown"/>
+        <Label x:Name="label_Labr3" Content="γ能谱仪" HorizontalAlignment="Left" Margin="0,123.5,-1,0" Grid.Row="2" VerticalAlignment="Top" FontSize="24" Foreground="White" Height="51" Width="284" MouseMove="Label_Labr3_MouseMove" MouseLeave="Label_Labr3_MouseLeave" Background="#FF2A3F54" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" MouseLeftButtonDown="label_Labr3_MouseLeftButtonDown"/>
+        <Label x:Name="label_safe" Content="安防监控" HorizontalAlignment="Left" Margin="0,328.167,0,0" Grid.Row="2" VerticalAlignment="Top" FontSize="24" Foreground="White" Height="51" Width="283" MouseMove="Label_safe_MouseMove" MouseLeave="Label_safe_MouseLeave" Background="#FF2A3F54" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" MouseLeftButtonDown="label_safe_MouseLeftButtonDown"/>
+        <Label x:Name="label_UPS" Content="UPS电源" HorizontalAlignment="Left" Margin="0,379.167,0,0" Grid.Row="2" VerticalAlignment="Top" FontSize="24" Foreground="White" Height="51" Width="283" MouseMove="Label_UPS_MouseMove" MouseLeave="Label_UPS_MouseLeave" Background="#FF2A3F54" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" MouseLeftButtonDown="label_UPS_MouseLeftButtonDown"/>
+        <Border BorderThickness="1" Height="5" VerticalAlignment="Bottom" Background="White" Margin="0,0,0,73.5" Grid.Row="2"/>
+        <Image x:Name="exit_png" Height="38.5" Margin="0,0,71,22.166" Source="exit.png" Stretch="Fill" VerticalAlignment="Bottom" Grid.Row="2" HorizontalAlignment="Right" Width="38.5" MouseDown="exit_png_MouseDown"/>
+
+    </Grid>
+</Window>

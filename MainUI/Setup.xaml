@@ -1,0 +1,397 @@
+﻿<Page x:Class="MainUI.Setup"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MainUI"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="Setup" Width="990" Height="943" Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="97*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <TabControl x:Name="tabControl" Margin="10,0,0,10">
+            <TabItem Header="  高气压电离室  " FontSize="20">
+                <Grid Background="#FFE5E5E5">
+                    <Grid x:Name="_131基本设置" Height="335" Margin="38,31.207,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="342">
+                        <Rectangle Fill="#FFF5F4F4" Stroke="#FFAFAFAF" RadiusY="16" RadiusX="16"/>
+                        <Border BorderThickness="1" Height="3" VerticalAlignment="Top" Background="#FFC9C7C7" Margin="15,93.5,13,0"/>
+                        <Label x:Name="label_131" Content="高气压电离室" HorizontalAlignment="Left" Margin="8.5,3.5,0,0" VerticalAlignment="Top" FontSize="20" Foreground="Gray" Height="51" Width="172" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                        <Border BorderThickness="1" Height="5" VerticalAlignment="Top" Background="Gray" Margin="15,49.5,13,0"/>
+                        <Border BorderThickness="1" HorizontalAlignment="Left" Height="207.767" Margin="140.145,56.652,0,0" VerticalAlignment="Top" Width="2.71" Background="#FFC9C7C7" RenderTransformOrigin="0.5,0.5">
+                            <Border.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="-1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="180"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Border.RenderTransform>
+                        </Border>
+                        <Label x:Name="label_131_Copy" Content="串口名称" HorizontalAlignment="Left" Margin="23,57,0,0" VerticalAlignment="Top" FontSize="20" Foreground="Gray" Height="34" Width="109" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" d:LayoutOverrides="HorizontalAlignment"/>
+                        <TextBox x:Name="textBox_131portName" Height="29" Margin="157,60,41,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <Label x:Name="label_131_BR" Content="波特率" HorizontalAlignment="Left" Margin="23,99,0,0" VerticalAlignment="Top" FontSize="20" Foreground="Gray" Height="34" Width="109" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" d:LayoutOverrides="HorizontalAlignment"/>
+                        <TextBox x:Name="textBox_131BR" Height="29" Margin="157,101.5,41,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <Border BorderThickness="1" Height="3" VerticalAlignment="Top" Background="#FFC9C7C7" Margin="15,135.333,13,0"/>
+                        <Label x:Name="label_131_BR_Copy" Content="时间间隔" HorizontalAlignment="Left" Margin="23,140.837,0,160.163" FontSize="20" Foreground="Gray" Width="109" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" d:LayoutOverrides="HorizontalAlignment"/>
+                        <TextBox x:Name="textBox_131timer" Margin="157,144.337,75,161.663" TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <Label x:Name="label_131_BR_Copy1" Content="秒" HorizontalAlignment="Left" Margin="272,140.337,0,160.663" FontSize="20" Foreground="Gray" Width="40" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                        <Border BorderThickness="1" Height="3" VerticalAlignment="Bottom" Background="#FFC9C7C7" Margin="15,0,13,154.667"/>
+                        <Label x:Name="label_131_BR_Copy2" Content="刻度因子" HorizontalAlignment="Left" Margin="23,0,0,118.167" VerticalAlignment="Bottom" FontSize="20" Foreground="Gray" Height="34" Width="109" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" d:LayoutOverrides="HorizontalAlignment"/>
+                        <TextBox x:Name="textBox_131factor" Height="29" Margin="157,0,41,120.667" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <Border BorderThickness="1" Height="3" VerticalAlignment="Bottom" Background="#FFC9C7C7" Margin="15,0,13,112.667"/>
+                        <Label x:Name="label_131_BR_Copy3" Content="原始数值单位" HorizontalAlignment="Left" Margin="1.329,0,0,75.5" VerticalAlignment="Bottom" FontSize="20" Foreground="Gray" Height="34" Width="142" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" d:LayoutOverrides="HorizontalAlignment"/>
+                        <ComboBox x:Name="comboBox_rs131" Height="29" Margin="157,0,41,78.667" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                            <ComboBoxItem Content="Gy/h"/>
+                            <ComboBoxItem Content="R/h"/>
+                        </ComboBox>
+                        <Border BorderThickness="1" Height="3" VerticalAlignment="Bottom" Background="#FFC9C7C7" Margin="15,0,13,69.667"/>
+                        <Button x:Name="button" Content="保存" HorizontalAlignment="Left" Height="45" Margin="62,0,0,12" VerticalAlignment="Bottom" Width="90" Click="button_Click"/>
+                        <Button x:Name="button_Copy" Content="读取" HorizontalAlignment="Right" Height="45" Margin="0,0,60,12" VerticalAlignment="Bottom" Width="90" Click="button_Copy_Click"/>
+                        <Label x:Name="label_131_Copy7" Content="基本设置" HorizontalAlignment="Left" Margin="237,4,0,0" VerticalAlignment="Top" FontSize="20" Foreground="Gray" Height="51" Width="95" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                    </Grid>
+                    <Grid x:Name="_131报警" Margin="465,31.207,45,353">
+                        <Rectangle Fill="#FFF5F4F4" Stroke="#FFAFAFAF" RadiusY="16" RadiusX="16"/>
+                        <Border BorderThickness="1" Height="3" VerticalAlignment="Top" Background="#FFC9C7C7" Margin="15,93.5,13,0"/>
+                        <Label x:Name="label_1" Content="高气压电离室" VerticalAlignment="Top" FontSize="20" Foreground="Gray" Height="51" Width="172" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="8.5,3.5,0,0" HorizontalAlignment="Left"/>
+                        <Border BorderThickness="1" Height="5" VerticalAlignment="Top" Background="Gray" Margin="15,49.5,13,0"/>
+                        <Border BorderThickness="1" Height="344.296" VerticalAlignment="Top" Background="#FFC9C7C7" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" Width="2.71" Margin="0,56.652,216.449,0">
+                            <Border.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="-1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="-7.0164775638926606E-15"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Border.RenderTransform>
+                        </Border>
+                        <Label x:Name="label_131_Copy8" Content="剂量率1级报警" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Foreground="Gray" Height="34" Width="157.5" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="23,57,0,0" d:LayoutOverrides="HorizontalAlignment"/>
+                        <TextBox x:Name="textBox_131doseAL1" Height="29" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Width="108" Margin="0,60,95,0"/>
+                        <Label x:Name="label_131_BR1" Content="剂量率2级报警" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Foreground="Gray" Height="34" Width="157.5" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="23,99,0,0" d:LayoutOverrides="HorizontalAlignment"/>
+                        <TextBox x:Name="textBox_131doseAL2" Height="29" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Width="108" Margin="0,101.5,95,0"/>
+                        <Border BorderThickness="1" Height="3" VerticalAlignment="Top" Background="#FFC9C7C7" Margin="15,135.333,13,0"/>
+                        <Label x:Name="label_131_BR_Copy10" Content="高压低阈值报警" HorizontalAlignment="Left" FontSize="20" Foreground="Gray" Width="157.5" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="23,140.837,0,0" Height="34" VerticalAlignment="Top" d:LayoutOverrides="HorizontalAlignment"/>
+                        <TextBox x:Name="textBox_131HVAL1" TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Width="128" Margin="0,144.337,75,0" Height="29" VerticalAlignment="Top"/>
+                        <Border BorderThickness="1" Height="3" Background="#FFC9C7C7" VerticalAlignment="Top" Margin="15,177.333,13,0"/>
+                        <Label x:Name="label_131_BR_Copy12" Content="高压高阈值报警" HorizontalAlignment="Left" FontSize="20" Foreground="Gray" Height="34" Width="157.5" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Top" Margin="23,182.833,0,0" d:LayoutOverrides="HorizontalAlignment"/>
+                        <TextBox x:Name="textBox_131HVAL2" Height="29" TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Width="128" VerticalAlignment="Top" Margin="0,185.333,75,0"/>
+                        <Border BorderThickness="1" Height="3" Background="#FFC9C7C7" VerticalAlignment="Top" Margin="15,219.333,13,0"/>
+                        <Label x:Name="label_131_BR_Copy13" Content="电池电压低阈值报警" HorizontalAlignment="Left" FontSize="20" Foreground="Gray" Width="197" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="23,225.5,0,216.5" d:LayoutOverrides="HorizontalAlignment"/>
+                        <Border BorderThickness="1" Height="3" Background="#FFC9C7C7" VerticalAlignment="Bottom" Margin="15,0,13,210.667"/>
+                        <Button x:Name="button1" Content="保存" Width="90" Margin="70,0,0,16" HorizontalAlignment="Left" Height="45" VerticalAlignment="Bottom" Click="button1_Click"/>
+                        <Button x:Name="button_Copy7" Content="读取" HorizontalAlignment="Right" Width="90" Margin="0,0,60,16" Height="45" VerticalAlignment="Bottom" Click="button_Copy7_Click"/>
+                        <Label x:Name="label_131_Copy9" Content="报警设置" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Foreground="Gray" Height="51" Width="95" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="333.048,4,0,0"/>
+                        <TextBox x:Name="textBox_131BVAL1" TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Width="128" Margin="0,229.333,75,217.667"/>
+                        <Border BorderThickness="1" Height="3" Background="#FFC9C7C7" VerticalAlignment="Bottom" Margin="15,0,13,166.167"/>
+                        <Label x:Name="label_131_BR_Copy11" Content="电池电压高阈值报警" HorizontalAlignment="Left" FontSize="20" Foreground="Gray" Height="34" Width="197" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Bottom" Margin="23,0,0,173.5" d:LayoutOverrides="HorizontalAlignment"/>
+                        <TextBox x:Name="textBox_131BVAL2" Height="29" TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Width="128" VerticalAlignment="Bottom" Margin="0,0,75,176.167"/>
+                        <Label x:Name="label_131_BR_Copy14" Content="仪器温度低阈值报警" HorizontalAlignment="Left" FontSize="20" Foreground="Gray" Height="34" Width="197" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Bottom" Margin="23,0,0,128.5" d:LayoutOverrides="HorizontalAlignment"/>
+                        <TextBox x:Name="textBox_131TMAL1" Height="29" TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Width="128" VerticalAlignment="Bottom" Margin="0,0,75,131.167"/>
+                        <Border BorderThickness="1" Height="3" Background="#FFC9C7C7" VerticalAlignment="Bottom" Margin="15,0,13,120.167"/>
+                        <Label x:Name="label_131_BR_Copy15" Content="仪器温度低阈值报警" HorizontalAlignment="Left" FontSize="20" Foreground="Gray" Height="34" Width="197" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Bottom" Margin="23,0,0,81.5" d:LayoutOverrides="HorizontalAlignment"/>
+                        <TextBox x:Name="textBox_131TMAL2" Height="29" TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Width="128" VerticalAlignment="Bottom" Margin="0,0,75,84.167"/>
+                        <Border BorderThickness="1" Background="#FFC9C7C7" Margin="15,0,13,74.167" Height="3" VerticalAlignment="Bottom"/>
+                        <Label x:Name="label_131_Copy30" Content="nGy/h" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Foreground="Gray" Height="37.834" Width="82" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="347.328,54.999,0,0"/>
+                        <Label x:Name="label_131_Copy31" Content="nGy/h" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Foreground="Gray" Height="37.834" Width="82" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="347.328,97.02,0,0"/>
+                        <Label x:Name="label_131_Copy32" Content="V" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Foreground="Gray" Height="37.834" Width="37.672" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="372.001,139.187,0,0"/>
+                        <Label x:Name="label_131_Copy33" Content="V" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Foreground="Gray" Height="37.834" Width="37.672" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="372.001,181.187,0,0"/>
+                        <Label x:Name="label_131_Copy34" Content="V" HorizontalAlignment="Left" FontSize="20" Foreground="Gray" Width="37.672" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="372.001,223.187,0,214.979"/>
+                        <Label x:Name="label_131_Copy35" Content="V" HorizontalAlignment="Left" FontSize="20" Foreground="Gray" Width="37.672" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="372.001,0,0,171.023" Height="37.811" VerticalAlignment="Bottom"/>
+                        <Label x:Name="label_131_Copy36" Content="℃" HorizontalAlignment="Left" FontSize="20" Foreground="Gray" Width="37.672" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="372.001,0,0,125.023" Height="37.811" VerticalAlignment="Bottom"/>
+                        <Label x:Name="label_131_Copy37" Content="℃" HorizontalAlignment="Left" FontSize="20" Foreground="Gray" Width="37.672" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="372.001,0,0,79.023" Height="37.811" VerticalAlignment="Bottom"/>
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="  自动气象站  " FontSize="20">
+                <Grid Background="#FFE5E5E5">
+                    <Grid HorizontalAlignment="Left" Height="205" Margin="38,31.207,0,0" VerticalAlignment="Top" Width="342">
+                        <Rectangle Fill="#FFF5F4F4" Stroke="#FFAFAFAF" RadiusY="16" RadiusX="16"/>
+                        <Border BorderThickness="1" Height="3" VerticalAlignment="Top" Background="#FFC9C7C7" Margin="15,93.5,13,0"/>
+                        <Label x:Name="label_131_Copy1" Content="自动气象站" HorizontalAlignment="Left" Margin="10,3.5,0,0" VerticalAlignment="Top" FontSize="20" Foreground="Gray" Height="51" Width="143.5" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" d:LayoutOverrides="HorizontalAlignment"/>
+                        <Border BorderThickness="1" Height="5" VerticalAlignment="Top" Background="Gray" Margin="15,49.5,13,0"/>
+                        <Border BorderThickness="1" HorizontalAlignment="Left" Height="81.115" Margin="140.145,54.108,0,0" VerticalAlignment="Top" Width="2.71" Background="#FFC9C7C7" RenderTransformOrigin="0.5,0.5">
+                            <Border.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="-1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="180"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Border.RenderTransform>
+                        </Border>
+                        <Label x:Name="label_131_Copy2" Content="串口名称" HorizontalAlignment="Left" Margin="23,57,0,0" VerticalAlignment="Top" FontSize="20" Foreground="Gray" Height="34" Width="109" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" d:LayoutOverrides="HorizontalAlignment"/>
+                        <TextBox x:Name="textBox_weatherportname" Height="29" Margin="157,60,41,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <Label x:Name="label_131_BR_Copy4" Content="时间间隔" HorizontalAlignment="Left" Margin="23,99,0,72" FontSize="20" Foreground="Gray" Width="109" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" d:LayoutOverrides="HorizontalAlignment"/>
+                        <Border BorderThickness="1" Height="3" VerticalAlignment="Bottom" Background="#FFC9C7C7" Margin="15,0,13,66.667"/>
+                        <TextBox x:Name="textBox_weathertimer" Margin="157,101.333,75,74.667" TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <Label x:Name="label_131_BR_Copy6" Content="秒" HorizontalAlignment="Left" Margin="272,99,0,72" FontSize="20" Foreground="Gray" Width="40" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                        <Button x:Name="button_Copy1" Content="保存" Margin="62,0,0,9" Height="45" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="90" Click="button_Copy1_Click"/>
+                        <Button x:Name="button_Copy2" Content="读取" HorizontalAlignment="Right" Margin="0,0,60,9" Width="90" Height="45" VerticalAlignment="Bottom" Click="button_Copy2_Click"/>
+                        <Label x:Name="label_131_Copy12" Content="基本设置" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Foreground="Gray" Height="51" Width="95" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="234,4,0,0"/>
+                    </Grid>
+                    <Grid Height="331" Margin="465,31.207,45,0" VerticalAlignment="Top">
+                        <Border BorderThickness="1" Height="3" VerticalAlignment="Top" Background="#FFC9C7C7" Margin="15,93.5,13,0"/>
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="  Gamma能谱仪  " FontSize="20" Margin="-2,-3,-2,0">
+                <Grid Background="#FFE5E5E5">
+                    <Grid HorizontalAlignment="Left" Height="251" Margin="38,31.207,0,0" VerticalAlignment="Top" Width="342">
+                        <Rectangle Fill="#FFF5F4F4" Stroke="#FFAFAFAF" RadiusY="16" RadiusX="16"/>
+                        <Border BorderThickness="1" Height="3" VerticalAlignment="Top" Background="#FFC9C7C7" Margin="15,93.5,13,0"/>
+                        <Label x:Name="label_131_Copy13" Content="Gamma能谱仪" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Foreground="Gray" Height="51" Width="143.5" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" d:LayoutOverrides="HorizontalAlignment" Margin="10,3.5,0,0"/>
+                        <Border BorderThickness="1" Height="5" VerticalAlignment="Top" Background="Gray" Margin="15,49.5,13,0"/>
+                        <Border BorderThickness="1" HorizontalAlignment="Left" Height="128.007" VerticalAlignment="Top" Width="2.71" Background="#FFC9C7C7" RenderTransformOrigin="0.5,0.5" Margin="140.145,54.108,0,0">
+                            <Border.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="-1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="-7.0164775638926606E-15"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Border.RenderTransform>
+                        </Border>
+                        <Label x:Name="label_131_Copy14" Content="IP地址" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Foreground="Gray" Height="34" Width="109" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" d:LayoutOverrides="HorizontalAlignment" Margin="23,57,0,0"/>
+                        <TextBox x:Name="textBox_saraIP" Height="29" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="157,60,41,0"/>
+                        <Label x:Name="label_131_BR_Copy19" Content="SN序列号" HorizontalAlignment="Left" FontSize="20" Foreground="Gray" Width="109" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" d:LayoutOverrides="HorizontalAlignment" Margin="23,99,0,118"/>
+                        <Border BorderThickness="1" Height="3" Background="#FFC9C7C7" VerticalAlignment="Bottom" Margin="15,0,13,112.667"/>
+                        <TextBox x:Name="textBox_SARASn" TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="157,101.333,41,120.667"/>
+                        <Button x:Name="button_Copy9" Content="保存" Height="45" HorizontalAlignment="Left" Width="90" VerticalAlignment="Bottom" Margin="62,0,0,8.98" Click="button_Copy9_Click"/>
+                        <Button x:Name="button_Copy10" Content="读取" Width="90" Height="45" VerticalAlignment="Bottom" Margin="0,0,60,8.98" HorizontalAlignment="Right" Click="button_Copy10_Click"/>
+                        <Label x:Name="label_131_Copy15" Content="基本设置" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Foreground="Gray" Height="51" Width="95" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="234,4,0,0"/>
+                        <Label x:Name="label_131_BR_Copy20" Content="下载路径" HorizontalAlignment="Left" FontSize="20" Foreground="Gray" Width="109" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="23,0,0,75.312" Height="34" VerticalAlignment="Bottom" d:LayoutOverrides="HorizontalAlignment"/>
+                        <TextBox x:Name="textBox_SARAPath" TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="157,0,41,77.979" Height="29" VerticalAlignment="Bottom"/>
+                        <Border BorderThickness="1" Height="3" Background="#FFC9C7C7" VerticalAlignment="Bottom" Margin="15,0,13,67.978"/>
+                    </Grid>
+                    <Grid Height="211" Margin="465,31.207,45,0" VerticalAlignment="Top">
+                        <Rectangle Fill="#FFF5F4F4" Stroke="#FFAFAFAF" RadiusY="16" RadiusX="16"/>
+                        <Border BorderThickness="1" Height="3" VerticalAlignment="Top" Background="#FFC9C7C7" Margin="15,93.5,13,0"/>
+                        <Label x:Name="label_3" Content="Gamma能谱仪" VerticalAlignment="Top" FontSize="20" Foreground="Gray" Height="51" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="8.5,3.5,0,0" HorizontalAlignment="Left" Width="172"/>
+                        <Border BorderThickness="1" Height="5" VerticalAlignment="Top" Background="Gray" Margin="15,49.5,13,0"/>
+                        <Border BorderThickness="1" Height="81.586" VerticalAlignment="Top" Background="#FFC9C7C7" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" Width="2.71" Margin="0,56.652,216.449,0">
+                            <Border.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="-1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="-7.0164775638926606E-15"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Border.RenderTransform>
+                        </Border>
+                        <Label x:Name="label_131_Copy16" Content="剂量率1级报警" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Foreground="Gray" Height="34" Width="157.5" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="23,57,0,0" d:LayoutOverrides="HorizontalAlignment"/>
+                        <TextBox x:Name="textBox_SARAAL1" Height="29" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Width="123" Margin="0,60,80,0"/>
+                        <Label x:Name="label_131_BR3" Content="剂量率2级报警" HorizontalAlignment="Left" FontSize="20" Foreground="Gray" Width="157.5" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="23,99,0,78" d:LayoutOverrides="HorizontalAlignment"/>
+                        <TextBox x:Name="textBox_SARAAL2" TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Width="123" Margin="0,101.5,80,80.5"/>
+                        <Border BorderThickness="1" Height="3" VerticalAlignment="Bottom" Background="#FFC9C7C7" Margin="15,0,13,72.667"/>
+                        <Button x:Name="button3" Content="保存" Width="90" Margin="70,0,0,13.5" HorizontalAlignment="Left" Height="45" VerticalAlignment="Bottom" Click="button3_Click"/>
+                        <Button x:Name="button_Copy11" Content="读取" HorizontalAlignment="Right" Width="90" Margin="0,0,60,13.5" Height="45" VerticalAlignment="Bottom" Click="button_Copy11_Click"/>
+                        <Label x:Name="label_131_Copy17" Content="报警设置" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Foreground="Gray" Height="51" Width="95" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="333.048,4,0,0"/>
+                        <Label x:Name="label_131_Copy44" Content="nSv/h" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Foreground="Gray" Height="37.834" Width="69.328" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="360,54.999,0,0"/>
+                        <Label x:Name="label_131_Copy45" Content="nSv/h" HorizontalAlignment="Left" FontSize="20" Foreground="Gray" Width="69.328" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="360,97.02,0,76.146"/>
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="  气溶胶采样器  " FontSize="20">
+                <Grid Background="#FFE5E5E5">
+                    <Grid HorizontalAlignment="Left" Height="205" Margin="38,31.207,0,0" VerticalAlignment="Top" Width="342">
+                        <Rectangle Fill="#FFF5F4F4" Stroke="#FFAFAFAF" RadiusY="16" RadiusX="16"/>
+                        <Border BorderThickness="1" Height="3" VerticalAlignment="Top" Background="#FFC9C7C7" Margin="15,93.5,13,0"/>
+                        <Label x:Name="label_131_Copy18" Content="气溶胶采样器" HorizontalAlignment="Left" Margin="10,3.5,0,0" VerticalAlignment="Top" FontSize="20" Foreground="Gray" Height="51" Width="143.5" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" d:LayoutOverrides="HorizontalAlignment"/>
+                        <Border BorderThickness="1" Height="5" VerticalAlignment="Top" Background="Gray" Margin="15,49.5,13,0"/>
+                        <Border BorderThickness="1" HorizontalAlignment="Left" Height="81.115" Margin="140.145,54.108,0,0" VerticalAlignment="Top" Width="2.71" Background="#FFC9C7C7" RenderTransformOrigin="0.5,0.5">
+                            <Border.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="-1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="180"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Border.RenderTransform>
+                        </Border>
+                        <Label x:Name="label_131_Copy19" Content="串口名称" HorizontalAlignment="Left" Margin="23,57,0,0" VerticalAlignment="Top" FontSize="20" Foreground="Gray" Height="34" Width="109" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" d:LayoutOverrides="HorizontalAlignment"/>
+                        <TextBox x:Name="textBox_QRJPN" Height="29" Margin="157,60,41,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <Label x:Name="label_131_BR_Copy21" Content="时间间隔" HorizontalAlignment="Left" Margin="23,99,0,72" FontSize="20" Foreground="Gray" Width="109" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" d:LayoutOverrides="HorizontalAlignment"/>
+                        <Border BorderThickness="1" Height="3" VerticalAlignment="Bottom" Background="#FFC9C7C7" Margin="15,0,13,66.667"/>
+                        <TextBox x:Name="textBox_QRJtimer" Margin="157,101.333,75,74.667" TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <Label x:Name="label_131_BR_Copy22" Content="秒" HorizontalAlignment="Left" Margin="272,99,0,72" FontSize="20" Foreground="Gray" Width="40" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                        <Button x:Name="button_Copy12" Content="保存" Margin="62,0,0,9" Height="45" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="90" Click="button_Copy12_Click"/>
+                        <Button x:Name="button_Copy13" Content="读取" HorizontalAlignment="Right" Margin="0,0,60,9" Width="90" Height="45" VerticalAlignment="Bottom" Click="button_Copy13_Click"/>
+                        <Label x:Name="label_131_Copy20" Content="基本设置" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Foreground="Gray" Height="51" Width="95" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="234,4,0,0"/>
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="碘采样器" FontSize="20">
+                <Grid Background="#FFE5E5E5">
+                    <Grid HorizontalAlignment="Left" Height="205" Margin="38,31.207,0,0" VerticalAlignment="Top" Width="342">
+                        <Rectangle Fill="#FFF5F4F4" Stroke="#FFAFAFAF" RadiusY="16" RadiusX="16"/>
+                        <Border BorderThickness="1" Height="3" VerticalAlignment="Top" Background="#FFC9C7C7" Margin="15,93.5,13,0"/>
+                        <Label x:Name="label_131_Copy21" Content="碘采样器" HorizontalAlignment="Left" Margin="10,3.5,0,0" VerticalAlignment="Top" FontSize="20" Foreground="Gray" Height="51" Width="143.5" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" d:LayoutOverrides="HorizontalAlignment"/>
+                        <Border BorderThickness="1" Height="5" VerticalAlignment="Top" Background="Gray" Margin="15,49.5,13,0"/>
+                        <Border BorderThickness="1" HorizontalAlignment="Left" Height="81.115" Margin="140.145,54.108,0,0" VerticalAlignment="Top" Width="2.71" Background="#FFC9C7C7" RenderTransformOrigin="0.5,0.5">
+                            <Border.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="-1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="180"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Border.RenderTransform>
+                        </Border>
+                        <Label x:Name="label_131_Copy22" Content="串口名称" HorizontalAlignment="Left" Margin="23,57,0,0" VerticalAlignment="Top" FontSize="20" Foreground="Gray" Height="34" Width="109" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" d:LayoutOverrides="HorizontalAlignment"/>
+                        <TextBox x:Name="textBox_DianPN" Height="29" Margin="157,60,41,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <Label x:Name="label_131_BR_Copy23" Content="时间间隔" HorizontalAlignment="Left" Margin="23,99,0,72" FontSize="20" Foreground="Gray" Width="109" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" d:LayoutOverrides="HorizontalAlignment"/>
+                        <Border BorderThickness="1" Height="3" VerticalAlignment="Bottom" Background="#FFC9C7C7" Margin="15,0,13,66.667"/>
+                        <TextBox x:Name="textBox_Diantimer" Margin="157,101.333,75,74.667" TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <Label x:Name="label_131_BR_Copy24" Content="秒" HorizontalAlignment="Left" Margin="272,99,0,72" FontSize="20" Foreground="Gray" Width="40" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                        <Button x:Name="button_Copy14" Content="保存" Margin="62,0,0,9" Height="45" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="90"/>
+                        <Button x:Name="button_Copy15" Content="读取" HorizontalAlignment="Right" Margin="0,0,60,9" Width="90" Height="45" VerticalAlignment="Bottom" Click="button_Copy15_Click"/>
+                        <Label x:Name="label_131_Copy23" Content="基本设置" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Foreground="Gray" Height="51" Width="95" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="234,4,0,0"/>
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="安防监控" FontSize="20">
+                <Grid Background="#FFE5E5E5" Margin="0,0,0,5.604">
+                    <Grid HorizontalAlignment="Left" Height="205" Margin="38,31.207,0,0" VerticalAlignment="Top" Width="342">
+                        <Rectangle Fill="#FFF5F4F4" Stroke="#FFAFAFAF" RadiusY="16" RadiusX="16"/>
+                        <Border BorderThickness="1" Height="3" VerticalAlignment="Top" Background="#FFC9C7C7" Margin="15,93.5,13,0"/>
+                        <Label x:Name="label_131_Copy3" Content="安防监控" HorizontalAlignment="Left" Margin="10,3.5,0,0" VerticalAlignment="Top" FontSize="20" Foreground="Gray" Height="51" Width="143.5" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" d:LayoutOverrides="HorizontalAlignment"/>
+                        <Border BorderThickness="1" Height="5" VerticalAlignment="Top" Background="Gray" Margin="15,49.5,13,0"/>
+                        <Border BorderThickness="1" HorizontalAlignment="Left" Height="81.115" Margin="140.145,54.108,0,0" VerticalAlignment="Top" Width="2.71" Background="#FFC9C7C7" RenderTransformOrigin="0.5,0.5">
+                            <Border.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="-1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="180"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Border.RenderTransform>
+                        </Border>
+                        <Label x:Name="label_131_Copy4" Content="串口名称" HorizontalAlignment="Left" Margin="23,57,0,0" VerticalAlignment="Top" FontSize="20" Foreground="Gray" Height="34" Width="109" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" d:LayoutOverrides="HorizontalAlignment"/>
+                        <TextBox x:Name="textBox_safePN" Height="29" Margin="157,60,41,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <Label x:Name="label_131_BR_Copy5" Content="时间间隔" HorizontalAlignment="Left" Margin="23,99,0,72" FontSize="20" Foreground="Gray" Width="109" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" d:LayoutOverrides="HorizontalAlignment"/>
+                        <Border BorderThickness="1" Height="3" VerticalAlignment="Bottom" Background="#FFC9C7C7" Margin="15,0,13,66.667"/>
+                        <TextBox x:Name="textBox_Safetimer" Margin="157,101.333,75,74.667" TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <Label x:Name="label_131_BR_Copy7" Content="秒" HorizontalAlignment="Left" Margin="272,99,0,72" FontSize="20" Foreground="Gray" Width="40" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                        <Button x:Name="button_Copy3" Content="保存" Margin="62,0,0,9" Height="45" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="90"/>
+                        <Button x:Name="button_Copy4" Content="读取" HorizontalAlignment="Right" Margin="0,0,60,9" Width="90" Height="45" VerticalAlignment="Bottom" Click="button_Copy4_Click"/>
+                        <Label x:Name="label_131_Copy24" Content="基本设置" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Foreground="Gray" Height="51" Width="95" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="234,4,0,0"/>
+                    </Grid>
+                    <Grid Height="211" Margin="465,31.207,45,0" VerticalAlignment="Top">
+                        <Rectangle Fill="#FFF5F4F4" Stroke="#FFAFAFAF" RadiusY="16" RadiusX="16"/>
+                        <Border BorderThickness="1" Height="3" VerticalAlignment="Top" Background="#FFC9C7C7" Margin="15,93.5,13,0"/>
+                        <Label x:Name="label_4" Content="安防监控" VerticalAlignment="Top" FontSize="20" Foreground="Gray" Height="51" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="8.5,3.5,0,0" HorizontalAlignment="Left" Width="172"/>
+                        <Border BorderThickness="1" Height="5" VerticalAlignment="Top" Background="Gray" Margin="15,49.5,13,0"/>
+                        <Border BorderThickness="1" Height="81.586" VerticalAlignment="Top" Background="#FFC9C7C7" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" Width="2.71" Margin="0,56.652,216.449,0">
+                            <Border.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="-1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="-7.0164775638926606E-15"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Border.RenderTransform>
+                        </Border>
+                        <Label x:Name="label_131_Copy26" Content="站房内温度报警" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Foreground="Gray" Height="34" Width="157.5" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="23,57,0,0" d:LayoutOverrides="HorizontalAlignment"/>
+                        <TextBox x:Name="textBox_SafeTMAL" Height="29" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Width="123" Margin="0,60,80,0"/>
+                        <Label x:Name="label_131_BR4" Content="站房内湿度报警" HorizontalAlignment="Left" FontSize="20" Foreground="Gray" Width="157.5" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="23,99,0,78" d:LayoutOverrides="HorizontalAlignment"/>
+                        <TextBox x:Name="textBox_SateWetAL" TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Width="123" Margin="0,101.5,80,80.5"/>
+                        <Border BorderThickness="1" Height="3" VerticalAlignment="Bottom" Background="#FFC9C7C7" Margin="15,0,13,72.667"/>
+                        <Button x:Name="button4" Content="保存" Width="90" Margin="70,0,0,13.5" HorizontalAlignment="Left" Height="45" VerticalAlignment="Bottom"/>
+                        <Button x:Name="button_Copy16" Content="读取" HorizontalAlignment="Right" Width="90" Margin="0,0,60,13.5" Height="45" VerticalAlignment="Bottom" Click="button_Copy16_Click"/>
+                        <Label x:Name="label_131_Copy27" Content="报警设置" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Foreground="Gray" Height="51" Width="95" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="333.048,4,0,0"/>
+                        <Label x:Name="label_131_Copy28" Content="℃" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Foreground="Gray" Height="34" Width="37.5" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="365,54.5,0,0"/>
+                        <Label x:Name="label_131_Copy29" Content="%RH" HorizontalAlignment="Left" FontSize="20" Foreground="Gray" Width="62" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="365,99.5,0,77.5"/>
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="UPS" FontSize="20" Height="30.396" VerticalAlignment="Top">
+                <Grid Background="#FFE5E5E5">
+                    <Grid HorizontalAlignment="Left" Height="205" Margin="38,31.207,0,0" VerticalAlignment="Top" Width="342">
+                        <Rectangle Fill="#FFF5F4F4" Stroke="#FFAFAFAF" RadiusY="16" RadiusX="16"/>
+                        <Border BorderThickness="1" Height="3" VerticalAlignment="Top" Background="#FFC9C7C7" Margin="15,93.5,13,0"/>
+                        <Label x:Name="label_131_Copy5" Content="UPS" HorizontalAlignment="Left" Margin="10,3.5,0,0" VerticalAlignment="Top" FontSize="20" Foreground="Gray" Height="51" Width="143.5" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" d:LayoutOverrides="HorizontalAlignment"/>
+                        <Border BorderThickness="1" Height="5" VerticalAlignment="Top" Background="Gray" Margin="15,49.5,13,0"/>
+                        <Border BorderThickness="1" HorizontalAlignment="Left" Height="81.115" Margin="140.145,54.108,0,0" VerticalAlignment="Top" Width="2.71" Background="#FFC9C7C7" RenderTransformOrigin="0.5,0.5">
+                            <Border.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="-1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="180"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Border.RenderTransform>
+                        </Border>
+                        <Label x:Name="label_131_Copy6" Content="串口名称" HorizontalAlignment="Left" Margin="23,57,0,0" VerticalAlignment="Top" FontSize="20" Foreground="Gray" Height="34" Width="109" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" d:LayoutOverrides="HorizontalAlignment"/>
+                        <TextBox x:Name="textBox_UPSPN" Height="29" Margin="157,60,41,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <Label x:Name="label_131_BR_Copy8" Content="时间间隔" HorizontalAlignment="Left" Margin="23,99,0,72" FontSize="20" Foreground="Gray" Width="109" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" d:LayoutOverrides="HorizontalAlignment"/>
+                        <Border BorderThickness="1" Height="3" VerticalAlignment="Bottom" Background="#FFC9C7C7" Margin="15,0,13,66.667"/>
+                        <TextBox x:Name="textBox_UPStimer" Margin="157,101.333,75,74.667" TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <Label x:Name="label_131_BR_Copy9" Content="秒" HorizontalAlignment="Left" Margin="272,99,0,72" FontSize="20" Foreground="Gray" Width="40" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                        <Button x:Name="button_Copy5" Content="保存" Margin="62,0,0,9" Height="45" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="90"/>
+                        <Button x:Name="button_Copy6" Content="读取" HorizontalAlignment="Right" Margin="0,0,60,9" Width="90" Height="45" VerticalAlignment="Bottom" Click="button_Copy6_Click"/>
+                        <Label x:Name="label_131_Copy25" Content="基本设置" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Foreground="Gray" Height="51" Width="95" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="234,4,0,0"/>
+                    </Grid>
+                    <Grid Height="166.001" Margin="465,31.207,45,0" VerticalAlignment="Top">
+                        <Rectangle Fill="#FFF5F4F4" Stroke="#FFAFAFAF" RadiusY="16" RadiusX="16"/>
+                        <Border BorderThickness="1" Height="3" VerticalAlignment="Bottom" Background="#FFC9C7C7" Margin="15,0,13,69.501"/>
+                        <Label x:Name="label_6" Content="UPS" VerticalAlignment="Top" FontSize="20" Foreground="Gray" Height="51" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="8.5,3.5,0,0" HorizontalAlignment="Left" Width="172"/>
+                        <Border BorderThickness="1" Height="5" VerticalAlignment="Top" Background="Gray" Margin="15,49.5,13,0"/>
+                        <Border BorderThickness="1" Height="37.336" VerticalAlignment="Top" Background="#FFC9C7C7" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" Width="2.71" Margin="0,56.652,216.449,0">
+                            <Border.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="-1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="-7.0164775638926606E-15"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Border.RenderTransform>
+                        </Border>
+                        <Label x:Name="label_131_Copy46" Content="剩余时间报警" HorizontalAlignment="Left" FontSize="20" Foreground="Gray" Width="157.5" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="23,57,0,75.001" d:LayoutOverrides="HorizontalAlignment"/>
+                        <TextBox x:Name="textBox_UPSTMAL" TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Width="123" Margin="0,60,80,77.001"/>
+                        <Button x:Name="button6" Content="保存" Width="90" Height="45" VerticalAlignment="Bottom" Margin="70,0,0,10.522" HorizontalAlignment="Left"/>
+                        <Button x:Name="button_Copy18" Content="读取" HorizontalAlignment="Right" Width="90" Height="45" VerticalAlignment="Bottom" Margin="0,0,65,10.522" Click="button_Copy18_Click"/>
+                        <Label x:Name="label_131_Copy47" Content="报警设置" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Foreground="Gray" Height="51" Width="95" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="333.048,4,0,0"/>
+                        <Label x:Name="label_131_Copy48" Content="小时" HorizontalAlignment="Left" FontSize="20" Foreground="Gray" Width="50" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="365,54.5,0,77.501"/>
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="监测站信息" FontSize="20">
+                <Grid Background="#FFE5E5E5">
+                    <Grid Height="306" Margin="38,31.207,365,0" VerticalAlignment="Top">
+                        <Rectangle Fill="#FFF5F4F4" Stroke="#FFAFAFAF" RadiusY="16" RadiusX="16"/>
+                        <Border BorderThickness="1" Height="3" VerticalAlignment="Top" Background="#FFC9C7C7" Margin="15,93.5,13,0"/>
+                        <Label x:Name="label_5" Content="监测站信息" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Foreground="Gray" Height="51" Width="172" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="8.5,3.5,0,0"/>
+                        <Border BorderThickness="1" Height="5" VerticalAlignment="Top" Background="Gray" Margin="15,49.5,13,0"/>
+                        <Border BorderThickness="1" HorizontalAlignment="Left" Height="165.267" VerticalAlignment="Top" Width="2.71" Background="#FFC9C7C7" RenderTransformOrigin="0.5,0.5" Margin="140.145,56.652,0,0">
+                            <Border.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="-1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="-7.0164775638926606E-15"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Border.RenderTransform>
+                        </Border>
+                        <Label x:Name="label_131_Copy38" Content="自动站名称" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Foreground="Gray" Height="34" Width="109" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" d:LayoutOverrides="HorizontalAlignment" Margin="23,57,0,0"/>
+                        <TextBox x:Name="textBox_name" Height="29" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="157,60,41,0"/>
+                        <Label x:Name="label_131_BR5" Content="自动站地址" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Foreground="Gray" Height="34" Width="109" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" d:LayoutOverrides="HorizontalAlignment" Margin="23,99,0,0"/>
+                        <TextBox x:Name="textBox_adress" Height="29" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="157,101.5,41,0"/>
+                        <Border BorderThickness="1" Height="3" VerticalAlignment="Top" Background="#FFC9C7C7" Margin="15,135.333,13,0"/>
+                        <Label x:Name="label_131_BR_Copy25" Content="负责人" HorizontalAlignment="Left" FontSize="20" Foreground="Gray" Width="109" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" d:LayoutOverrides="HorizontalAlignment" Margin="23,140.837,0,131.163"/>
+                        <TextBox x:Name="textBox_people" TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="157,144.337,41,132.663"/>
+                        <Border BorderThickness="1" Height="3" Background="#FFC9C7C7" VerticalAlignment="Bottom" Margin="15,0,13,125.667"/>
+                        <Label x:Name="label_131_BR_Copy27" Content="联系电话" HorizontalAlignment="Left" FontSize="20" Foreground="Gray" Height="34" Width="109" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" d:LayoutOverrides="HorizontalAlignment" VerticalAlignment="Bottom" Margin="23,0,0,89.167"/>
+                        <TextBox x:Name="textBox_number" Height="29" TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Bottom" Margin="157,0,41,91.667"/>
+                        <Border BorderThickness="1" Height="3" Background="#FFC9C7C7" VerticalAlignment="Bottom" Margin="15,0,13,83.667"/>
+                        <Button x:Name="button5" Content="保存" HorizontalAlignment="Left" Height="45" Width="90" VerticalAlignment="Bottom" Margin="90.5,0,0,17.465"/>
+                        <Button x:Name="button_Copy17" Content="读取" Height="45" VerticalAlignment="Bottom" Margin="0,0,100,17.465" HorizontalAlignment="Right" Width="90" Click="button_Copy17_Click"/>
+                    </Grid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Page>

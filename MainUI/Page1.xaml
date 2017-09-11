@@ -1,0 +1,365 @@
+﻿<Page
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+	x:Class="MainUI.Page1"
+	x:Name="Page"
+	WindowTitle="Page"
+	FlowDirection="LeftToRight"
+	Width="990" Height="946"
+	WindowWidth="640" WindowHeight="480" Loaded="Page_Loaded">
+    <Page.Resources>
+        <XmlDataProvider x:Key="xml_RS131Date" IsAsynchronous="True"  Source="C:\config\value_tmp\RS131.xml" XPath="NewDataSet/runValue"/>
+        <XmlDataProvider x:Key="xml_WeatherDate" IsAsynchronous="True"  Source="C:\config\value_tmp\weather.xml" XPath="NewDataSet/runValue"/>
+        <XmlDataProvider x:Key="xml_SARADate" IsAsynchronous="True"  Source="C:\config\value_tmp\SARA.xml" XPath="NewDataSet/runValue"/>
+        <XmlDataProvider x:Key="xml_SafeDate" IsAsynchronous="True"  Source="C:\config\value_tmp\safe.xml" XPath="NewDataSet/runValue"/>
+        <XmlDataProvider x:Key="xml_UPSDate" IsAsynchronous="True"  Source="C:\config\value_tmp\UPS.xml" XPath="NewDataSet/runValue"/>
+        <XmlDataProvider x:Key="xml_QRJDate" IsAsynchronous="True"  Source="C:\config\QRJRun\runValueTmp.xml" XPath="runValue"/>
+        <XmlDataProvider x:Key="xml_DianDate" IsAsynchronous="True"  Source="C:\config\dianRun\runValueTmp.xml" XPath="runValue"/>
+
+    </Page.Resources>
+
+    <Grid x:Name="LayoutRoot" Width="990" Height="946">
+        <Label Content="高气压电离室" HorizontalAlignment="Left" Margin="60.006,1.722,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" Foreground="#FF73879C" Height="27.277" Width="98" TextOptions.TextHintingMode="Fixed"/>
+        <Image Margin="23.468,1.722,936.666,0" Source="Fonts/chip_silver_64px_1098789_easyicon.net.png" Stretch="Fill" Height="27.972" VerticalAlignment="Top" Width="26.866"/>
+        <Border BorderBrush="#FFF7F7F7" BorderThickness="1" HorizontalAlignment="Left" Height="111.006" Margin="486.868,20,0,0" VerticalAlignment="Top" Width="4.083" Background="#FFADB2B5"/>
+        <Label Content="LaBr3 溴化镧能谱仪" HorizontalAlignment="Left" Margin="60.006,319.764,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" Foreground="#FF73879C" Height="27.277" Width="140.553"/>
+        <Label x:Name="page1_labr3_doserate" DataContext="{Binding Source={StaticResource xml_SARADate}}" Content="{Binding XPath=sara_doserate}" HorizontalAlignment="Left" Margin="38,374.697,0,0" VerticalAlignment="Top" FontSize="37.333" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" FontWeight="Bold" Foreground="#FFE74C3C" Height="53.973" Width="133.114" HorizontalContentAlignment="Right"/>
+        <Label HorizontalAlignment="Left" Margin="182.114,360.708,0,0" VerticalAlignment="Top" FontSize="24" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontWeight="Bold" Foreground="#FF73879C" Height="10" Width="10"/>
+        <Image Margin="23.468,319.363,939.134,0" Source="Fonts/chip_silver_64px_1098789_easyicon.net.png" Stretch="Fill" Height="27.972" VerticalAlignment="Top" Width="26.866"/>
+        <Label Content="nSv/h" HorizontalAlignment="Left" Margin="174.114,387.16,0,0" VerticalAlignment="Top" FontSize="21.333" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" FontWeight="Bold" Foreground="#FF73879C" Height="35.127" Width="70.77"/>
+        <Label x:Name="page1_labr3_statue" Content="N/A" HorizontalAlignment="Left" Margin="46.999,492.631,0,0" VerticalAlignment="Top" FontSize="13.333" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" Foreground="#FFE74C3C" Height="27.811" Width="36.667"/>
+        <Label x:Name="page1_labr3_datetime" DataContext="{Binding Source={StaticResource xml_SARADate}}" Content="{Binding XPath=datetime}" HorizontalAlignment="Left" Margin="88.666,492.631,0,0" VerticalAlignment="Top" FontSize="13.333" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" FontWeight="Bold" Foreground="#FF73879C" Height="25.703" Width="150.58" TextOptions.TextHintingMode="Animated"/>
+        <Border BorderBrush="#FFF7F7F7" BorderThickness="1" HorizontalAlignment="Left" Height="166.506" Margin="682.356,333.344,0,0" VerticalAlignment="Top" Width="4.083" Background="#FFADB2B5"/>
+        <Label Content="气溶胶采样器" HorizontalAlignment="Left" Margin="60.006,156.722,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" Foreground="#FF73879C" Height="27.277" Width="98"/>
+        <Image Margin="23.468,156.722,939.134,0" Source="Fonts/chip_silver_64px_1098789_easyicon.net.png" Stretch="Fill" Height="27.972" VerticalAlignment="Top" Width="26.866"/>
+        <Label x:Name="PG1_QRJ_statue_label" DataContext="{Binding Source={StaticResource xml_QRJDate}}" Content="{Binding XPath=workstatue}" HorizontalAlignment="Left" Margin="55,224,0,0" VerticalAlignment="Top" FontSize="29.333" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" FontWeight="Bold" Foreground="#FFE95E4F" Background="#00000000" Width="76" Height="44" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label x:Name="PG1_QRJFlowRate_label" DataContext="{Binding Source={StaticResource xml_QRJDate}}" Content="{Binding XPath=flowrate}" HorizontalAlignment="Left" Margin="174,230,0,0" VerticalAlignment="Top" FontSize="22.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" FontWeight="Bold" Foreground="#FF73879C" Height="35" Width="78" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+        <Label x:Name="PG1_QRJ_FlowCount_label" DataContext="{Binding Source={StaticResource xml_QRJDate}}" Content="{Binding XPath=countflow}" HorizontalAlignment="Left" Margin="344,230,0,0" VerticalAlignment="Top" FontSize="22.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" FontWeight="Bold" Foreground="#FF73879C" Height="35" Width="62" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+        <Label Content="运行状态" HorizontalAlignment="Left" Margin="60,195,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" Foreground="#FF73879C" Height="28" Width="69"/>
+        <Label Content="采样流速" HorizontalAlignment="Left" Margin="208.333,196.328,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" Foreground="#FF73879C" Height="27.277" Width="68.667"/>
+        <Label Content="采样流量" HorizontalAlignment="Left" Margin="359.749,196.328,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" Foreground="#FF73879C" Height="27.277" Width="68.667"/>
+        <Label x:Name="PG1_QRJ_datetime_label" DataContext="{Binding Source={StaticResource xml_QRJDate}}" Content="{Binding XPath=datetime}" HorizontalAlignment="Left" Margin="188.006,271.945,0,0" VerticalAlignment="Top" FontSize="13.333" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" FontWeight="Bold" Foreground="#FF73879C" Height="25.703" Width="151.994" TextOptions.TextHintingMode="Animated" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Border BorderBrush="#FFF7F7F7" BorderThickness="1" HorizontalAlignment="Left" Height="974.092" Margin="487.293,-333.546,0,0" VerticalAlignment="Top" Width="4.083" Background="#FFD9DEE4" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+        </Border>
+        <Label Content="碘采样器" HorizontalAlignment="Left" Margin="551.068,158.551,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" Foreground="#FF73879C" Height="27.277" Width="98"/>
+        <Image Margin="519.202,157.856,443.932,0" Source="Fonts/chip_silver_64px_1098789_easyicon.net.png" Stretch="Fill" Height="27.972" VerticalAlignment="Top" Width="26.866"/>
+        <Label x:Name="PG1_Dian_statue_label" DataContext="{Binding Source={StaticResource xml_DianDate}}" Content="{Binding XPath=workstatue}" HorizontalAlignment="Left" Margin="551,224,0,0" VerticalAlignment="Top" FontSize="29.333" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" FontWeight="Bold" Foreground="#FFE95E4F" Background="#00000000" Width="77" Height="45" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label x:Name="PG1_DianFlowRate_label" DataContext="{Binding Source={StaticResource xml_DianDate}}" Content="{Binding XPath=flowrate}" HorizontalAlignment="Left" Margin="676,231,0,0" VerticalAlignment="Top" FontSize="22.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" FontWeight="Bold" Foreground="#FF73879C" Height="35" Width="62" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+        <Label x:Name="PG1_Dian_FlowCount_label"  DataContext="{Binding Source={StaticResource xml_DianDate}}" Content="{Binding XPath=countflow}" HorizontalAlignment="Left" Margin="828,230,0,0" VerticalAlignment="Top" FontSize="22.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" FontWeight="Bold" Foreground="#FF73879C" Height="35" Width="65" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+        <Label Content="运行状态" HorizontalAlignment="Left" Margin="551.068,196.328,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" Foreground="#FF73879C" Height="27.277" Width="68.667"/>
+        <Label Content="采样流速" HorizontalAlignment="Left" Margin="694.086,196.328,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" Foreground="#FF73879C" Height="27.277" Width="68.666"/>
+        <Label Content="采样流量" HorizontalAlignment="Left" Margin="838.214,196.328,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" Foreground="#FF73879C" Height="27.277" Width="68.667"/>
+        <Label x:Name="PG1_Dian_datetime_label" DataContext="{Binding Source={StaticResource xml_DianDate}}" Content="{Binding XPath=datetime}" HorizontalAlignment="Left" Margin="673.162,271.945,0,0" VerticalAlignment="Top" FontSize="13.333" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" FontWeight="Bold" Foreground="#FF73879C" Height="25.703" Width="152.838" TextOptions.TextHintingMode="Animated" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Border BorderBrush="#FFF7F7F7" BorderThickness="1" HorizontalAlignment="Left" Height="113.506" Margin="486.868,171.828,0,0" VerticalAlignment="Top" Width="4.083" Background="#FFADB2B5"/>
+        <Label Content="气象站" HorizontalAlignment="Left" Margin="551.068,3.973,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" Foreground="#FF73879C" Height="27.277" Width="98" TextOptions.TextHintingMode="Fixed"/>
+        <Image Margin="515.139,3.973,447.994,0" Source="Fonts/chip_silver_64px_1098789_easyicon.net.png" Stretch="Fill" Height="27.972" VerticalAlignment="Top" Width="26.866"/>
+        <Label Content="温度：" HorizontalAlignment="Left" Margin="506,46,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" Foreground="#FF73879C" Height="28" Width="53"/>
+        <Label x:Name="PG1_weather_tmp_label" DataContext="{Binding Source={StaticResource xml_WeatherDate}}" Content="{Binding XPath=tm}" HorizontalAlignment="Left" Margin="551,44,0,0" VerticalAlignment="Top" FontSize="18.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" FontWeight="Bold" Foreground="#FF73879C" Height="30" Width="56" VerticalContentAlignment="Center"/>
+        <Label Content="湿度：" HorizontalAlignment="Left" Margin="796,84,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" Foreground="#FF73879C" Height="27" Width="53"/>
+        <Label x:Name="PG1_weather_wet_label" DataContext="{Binding Source={StaticResource xml_WeatherDate}}" Content="{Binding XPath=hm}" HorizontalAlignment="Left" Margin="839,82,0,0" VerticalAlignment="Top" FontSize="18.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" FontWeight="Bold" Foreground="#FF73879C" Height="30" Width="50"/>
+        <Label Content="风速：" HorizontalAlignment="Left" Margin="645,47,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" Foreground="#FF73879C" Height="27" Width="53"/>
+        <Label x:Name="PG1_weather_windspeed_label" DataContext="{Binding Source={StaticResource xml_WeatherDate}}" Content="{Binding XPath=windspeed}" HorizontalAlignment="Left" Margin="683,45,0,0" VerticalAlignment="Top" FontSize="18.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" FontWeight="Bold" Foreground="#FF73879C" Height="30" Width="55" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
+        <Label Content="风向：" HorizontalAlignment="Left" Margin="796,46,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" Foreground="#FF73879C" Height="27" Width="53"/>
+        <Label x:Name="PG1_weather_winddirect_label"  Content="N/A" HorizontalAlignment="Left" Margin="836,42,0,0" VerticalAlignment="Top" FontSize="18.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" Foreground="#FF73879C" Height="34" Width="77" VerticalContentAlignment="Center" FontWeight="Bold"/>
+        <Label Content="雨量：" HorizontalAlignment="Left" Margin="506.71,83.622,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" Foreground="#FF73879C" Height="27.277" Width="52.667"/>
+        <Label x:Name="PG1_weather_rainfall_label" DataContext="{Binding Source={StaticResource xml_WeatherDate}}" Content="{Binding XPath=rainfall}" HorizontalAlignment="Left" Margin="532,82,0,0" VerticalAlignment="Top" FontSize="18.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" FontWeight="Bold" Foreground="#FF73879C" Height="30" Width="69" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Right"/>
+        <Label Content="雨感：" HorizontalAlignment="Left" Margin="903,84,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" Foreground="#FF73879C" Height="27" Width="52"/>
+        <Label x:Name="PG1_weather_ifrain_label" DataContext="{Binding Source={StaticResource xml_WeatherDate}}" Content="{Binding XPath=ifrain}" HorizontalAlignment="Left" Margin="933,84,-1,0" VerticalAlignment="Top" FontSize="16" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" Foreground="#FF73879C" Height="29" Width="58" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Content="气压：" HorizontalAlignment="Left" Margin="645,85,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" Foreground="#FF73879C" Height="27" Width="53"/>
+        <Label x:Name="PG1_weather_presure_label"  DataContext="{Binding Source={StaticResource xml_WeatherDate}}" Content="{Binding XPath=pressure}" HorizontalAlignment="Left" Margin="689,82,0,0" VerticalAlignment="Top" FontSize="18.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" FontWeight="Bold" Foreground="#FF73879C" Height="30" Width="74" VerticalContentAlignment="Center"/>
+        <Label x:Name="page1_UPS_datetime_label"  DataContext="{Binding Source={StaticResource xml_UPSDate}}" Content="{Binding XPath=datetime}" HorizontalAlignment="Left" Margin="741.292,492.631,0,0" VerticalAlignment="Top" FontSize="13.333" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" FontWeight="Bold" Foreground="#FF73879C" Height="25.703" Width="154.252" TextOptions.TextHintingMode="Animated"/>
+        <Label x:Name="PG1_weather_datetime_label" DataContext="{Binding Source={StaticResource xml_WeatherDate}}" Content="{Binding XPath=datetime}" HorizontalAlignment="Left" Margin="680.359,118.007,0,0" VerticalAlignment="Top" FontSize="13.333" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" FontWeight="Bold" Foreground="#FF73879C" Height="25.703" Width="149.944" TextOptions.TextHintingMode="Animated"/>
+        <Label Content="UPS电源" HorizontalAlignment="Left" Margin="746.952,319.363,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" Foreground="#FF73879C" Height="27.277" Width="98"/>
+        <Image Margin="715.085,319.363,248.048,0" Source="Fonts/chip_silver_64px_1098789_easyicon.net.png" Stretch="Fill" Height="27.972" VerticalAlignment="Top" Width="26.866"/>
+        <Label x:Name="page1_UPS_statue_label" Content="N/A" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="29.333" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" FontWeight="Bold" Foreground="#FFE95E4F" Width="75" Height="44" Background="#00000000" Margin="785,427,0,0"/>
+        <Border BorderBrush="#FFF7F7F7" BorderThickness="1" HorizontalAlignment="Left" Height="974.092" Margin="487.293,-179.046,0,0" VerticalAlignment="Top" Width="4.083" Background="#FFD9DEE4" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+        </Border>
+        <Label Content="安防监控" HorizontalAlignment="Left" Margin="366.568,319.363,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" Foreground="#FF73879C" Height="27.277" Width="98"/>
+        <Image Margin="334.702,319.363,628.432,0" Source="Fonts/chip_silver_64px_1098789_easyicon.net.png" Stretch="Fill" Height="27.972" VerticalAlignment="Top" Width="26.866"/>
+        <Label Content="烟感：" HorizontalAlignment="Left" Margin="364.401,362.215,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" Foreground="#FF73879C" Height="27.277" Width="52.667"/>
+        <Label x:Name="PG1_smoke_label" DataContext="{Binding Source={StaticResource xml_SafeDate}}" Content="{Binding XPath=smoke}" HorizontalAlignment="Left" Margin="422,358,0,0" VerticalAlignment="Top" FontSize="18.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" FontWeight="Bold" Foreground="#FFE95E4F" Height="34" Width="60"/>
+        <Label Content="水浸：" HorizontalAlignment="Left" Margin="364.401,395.928,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" Foreground="#FF73879C" Height="27.277" Width="52.667"/>
+        <Label x:Name="PG1_water_label" DataContext="{Binding Source={StaticResource xml_SafeDate}}" Content="{Binding XPath=water}" HorizontalAlignment="Left" Margin="422.068,391.909,0,0" VerticalAlignment="Top" FontSize="18.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" FontWeight="Bold" Foreground="#FFE95E4F" Height="33.056" Width="66.11"/>
+        <Label Content="门禁1：" HorizontalAlignment="Left" Margin="362.749,430.209,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" Foreground="#FF73879C" Height="27.277" Width="66.574" d:LayoutOverrides="VerticalAlignment"/>
+        <Label x:Name="PG1_door1_label" DataContext="{Binding Source={StaticResource xml_SafeDate}}" Content="{Binding XPath=door1}" HorizontalAlignment="Left" Margin="422.068,426.105,0,0" VerticalAlignment="Top" FontSize="18.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" FontWeight="Bold" Foreground="#FFE95E4F" Height="33.713" Width="66.11" d:LayoutOverrides="VerticalAlignment"/>
+        <Label Content="门禁2：" HorizontalAlignment="Left" Margin="499.992,361.363,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" Foreground="#FF73879C" Height="27.277" Width="61.393"/>
+        <Label x:Name="PG1_door2_label" DataContext="{Binding Source={StaticResource xml_SafeDate}}" Content="{Binding XPath=door2}" HorizontalAlignment="Left" Margin="578.246,355.684,0,0" VerticalAlignment="Top" FontSize="18.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" Foreground="#FFE95E4F" Height="32.99" Width="91.754" FontWeight="Bold"/>
+        <Label x:Name="PG1_safedatetime_label"  DataContext="{Binding Source={StaticResource xml_SafeDate}}" Content="{Binding XPath=datetime}" HorizontalAlignment="Left" Margin="438.712,492.631,0,0" VerticalAlignment="Top" FontSize="13.333" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" FontWeight="Bold" Foreground="#FF73879C" Height="25.703" Width="150.908" TextOptions.TextHintingMode="Animated"/>
+        <Border BorderBrush="#00000000" BorderThickness="1" HorizontalAlignment="Left" Height="181" Margin="0,537,0,0" VerticalAlignment="Top" Width="990" Background="White">
+            <Label Content="网络状态" Margin="18.5,5,871,137.5" FontFamily="/MainUI;component/Fonts/#LiHei Pro" FontSize="20" Foreground="#FF73879C"/>
+        </Border>
+        <Border BorderBrush="#FFF7F7F7" BorderThickness="1" HorizontalAlignment="Left" Height="166.506" Margin="305.449,333.344,0,0" VerticalAlignment="Top" Width="4.083" Background="#FFADB2B5"/>
+        <Border BorderBrush="#FFF7F7F7" BorderThickness="1" HorizontalAlignment="Left" Height="974.092" Margin="487.293,92.454,0,-120.546" VerticalAlignment="Top" Width="2" Background="#FFD9DEE4" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+        </Border>
+        <Border BorderBrush="#FFF7F7F7" BorderThickness="1" HorizontalAlignment="Left" Height="277" Margin="142.293,485.454,0,0" VerticalAlignment="Top" Width="2" Background="#FFD9DEE4" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+        </Border>
+        <Label Content="数据中心：" HorizontalAlignment="Left" Margin="32,589.148,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="27.277" Width="103.967"/>
+        <Label Content="N/A" HorizontalAlignment="Left" Margin="126.616,589.148,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="27.277" Width="120.631"/>
+        <Label Content="通讯延状态：" HorizontalAlignment="Left" Margin="35,634.148,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="27.277" Width="103.967"/>
+        <Label Content="N/A" HorizontalAlignment="Left" Margin="126.616,634.148,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="27.277" Width="120.631" FontWeight="Bold"/>
+        <Border BorderBrush="#FFF7F7F7" BorderThickness="1" HorizontalAlignment="Left" Height="277" Margin="142.293,530.454,0,0" VerticalAlignment="Top" Width="2" Background="#FFD9DEE4" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+        </Border>
+        <Label Content="最新上传：" HorizontalAlignment="Left" Margin="35,679.148,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="27.277" Width="103.967"/>
+        <Label Content="0000-00-00 00:00:00" HorizontalAlignment="Left" Margin="130.654,679.148,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="27.277" Width="156.013"/>
+        <Border BorderBrush="#FFF7F7F7" BorderThickness="1" HorizontalAlignment="Left" Height="115" Margin="303.293,590.454,0,0" VerticalAlignment="Top" Width="2" Background="#FFD9DEE4" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+        </Border>
+        <Border BorderBrush="#FFF7F7F7" BorderThickness="1" HorizontalAlignment="Left" Height="115" Margin="646.293,590.454,0,0" VerticalAlignment="Top" Width="2" Background="#FFD9DEE4" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+        </Border>
+        <Border BorderBrush="#FFF7F7F7" BorderThickness="1" HorizontalAlignment="Left" Height="277" Margin="474.293,485.454,0,0" VerticalAlignment="Top" Width="2" Background="#FFD9DEE4" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+        </Border>
+        <Border BorderBrush="#FFF7F7F7" BorderThickness="1" HorizontalAlignment="Left" Height="277" Margin="814.293,485.454,0,0" VerticalAlignment="Top" Width="2" Background="#FFD9DEE4" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+        </Border>
+        <Border BorderBrush="#FFF7F7F7" BorderThickness="1" HorizontalAlignment="Left" Height="277" Margin="474.293,529.454,0,0" VerticalAlignment="Top" Width="2" Background="#FFD9DEE4" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+        </Border>
+        <Border BorderBrush="#FFF7F7F7" BorderThickness="1" HorizontalAlignment="Left" Height="277" Margin="814.293,530.454,0,0" VerticalAlignment="Top" Width="2" Background="#FFD9DEE4" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+        </Border>
+        <Label Content="本日发送数据包数：" HorizontalAlignment="Left" Margin="336.359,589.148,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="27.277" Width="145.94"/>
+        <Label Content="000000" HorizontalAlignment="Left" Margin="486.868,589.148,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="27.277" Width="120.631"/>
+        <Label Content="发送成功：" HorizontalAlignment="Left" Margin="336.359,634.148,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="27.277" Width="145.94"/>
+        <Label Content="000000" HorizontalAlignment="Left" Margin="486.868,634.148,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="27.277" Width="120.631" FontWeight="Bold"/>
+        <Label Content="发送失败/补发：" HorizontalAlignment="Left" Margin="336.359,679.148,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="27.277" Width="145.94"/>
+        <Label Content="0000" HorizontalAlignment="Left" Margin="486.868,679.148,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="27.277" Width="54.376" FontWeight="Bold"/>
+        <Label Content="本月发送数据包数：" HorizontalAlignment="Left" Margin="680.359,589.148,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="27.277" Width="145.94"/>
+        <Label Content="000000" HorizontalAlignment="Left" Margin="830.868,589.148,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="27.277" Width="120.631"/>
+        <Label Content="发送成功：" HorizontalAlignment="Left" Margin="680.359,634.148,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="27.277" Width="145.94"/>
+        <Label Content="000000" HorizontalAlignment="Left" Margin="830.868,634.148,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="27.277" Width="120.631" FontWeight="Bold"/>
+        <Label Content="发送失败/补发：" HorizontalAlignment="Left" Margin="680.359,679.148,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="27.277" Width="145.94"/>
+        <Label Content="/" HorizontalAlignment="Left" Margin="527.244,679.148,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="27.277" Width="15.376" FontWeight="Bold"/>
+        <Label Content="0000" HorizontalAlignment="Left" Margin="535.244,679.148,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="27.277" Width="54.376" FontWeight="Bold"/>
+        <Label Content="0000" HorizontalAlignment="Left" Margin="831.402,679.148,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="27.277" Width="54.376" FontWeight="Bold"/>
+        <Label Content="/" HorizontalAlignment="Left" Margin="871.778,679.148,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="27.277" Width="15.376" FontWeight="Bold"/>
+        <Label Content="0000" HorizontalAlignment="Left" Margin="880.778,679.148,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="27.277" Width="54.376" FontWeight="Bold"/>
+        <Border BorderBrush="#00000000" BorderThickness="1" HorizontalAlignment="Left" Height="188" Margin="0,727.5,0,0" VerticalAlignment="Top" Width="990" Background="White">
+            <Label Content="自动站运行状态" Margin="18.5,5,812,137.5" FontFamily="/MainUI;component/Fonts/#LiHei Pro" FontSize="20" Foreground="#FF73879C"/>
+        </Border>
+        <Border BorderBrush="#FFF7F7F7" BorderThickness="1" HorizontalAlignment="Left" Height="974.092" Margin="487.293,287.954,0,-316.046" VerticalAlignment="Top" Width="2" Background="#FFD9DEE4" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+        </Border>
+        <Border BorderBrush="#FFF7F7F7" BorderThickness="1" HorizontalAlignment="Left" Height="115" Margin="303.293,789.954,0,0" VerticalAlignment="Top" Width="2" Background="#FFD9DEE4" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+        </Border>
+        <Border BorderBrush="#FFF7F7F7" BorderThickness="1" HorizontalAlignment="Left" Height="115" Margin="646.293,792.954,0,0" VerticalAlignment="Top" Width="2" Background="#FFD9DEE4" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+        </Border>
+        <Border BorderBrush="#FFF7F7F7" BorderThickness="1" HorizontalAlignment="Left" Height="277" Margin="142.293,680.954,0,-11.954" VerticalAlignment="Top" Width="2" Background="#FFD9DEE4" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+        </Border>
+        <Label Content="开始运行日期：" HorizontalAlignment="Left" Margin="24,786.648,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="27.277" Width="112.967"/>
+        <Label Content="0000-00-00 00:00:00" HorizontalAlignment="Left" Margin="141.336,786.648,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="27.277" Width="145.631"/>
+        <Label Content="运行时间：" HorizontalAlignment="Left" Margin="24,829.648,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="27.277" Width="112.967"/>
+        <Label Content="000000 分钟" HorizontalAlignment="Left" Margin="141.336,829.648,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="27.277" Width="145.631"/>
+        <Border BorderBrush="#FFF7F7F7" BorderThickness="1" HorizontalAlignment="Left" Height="277" Margin="142.293,725.954,0,-56.954" VerticalAlignment="Top" Width="2" Background="#FFD9DEE4" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+        </Border>
+        <Label Content="报警总数：" HorizontalAlignment="Left" Margin="24,875.648,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="27.277" Width="112.967"/>
+        <Label Content="0次" HorizontalAlignment="Left" Margin="141.336,875.648,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FFE74C3B" Height="27.277" Width="145.631"/>
+        <Border BorderBrush="#FFF7F7F7" BorderThickness="1" HorizontalAlignment="Left" Height="277" Margin="161.293,680.954,0,-11.954" VerticalAlignment="Top" Width="2" Background="#FFD9DEE4" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+        </Border>
+        <Border BorderBrush="#FFF7F7F7" BorderThickness="1" HorizontalAlignment="Left" Height="277" Margin="474.293,680.954,0,-11.954" VerticalAlignment="Top" Width="2" Background="#FFD9DEE4" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+        </Border>
+        <Border BorderBrush="#FFF7F7F7" BorderThickness="1" HorizontalAlignment="Left" Height="277" Margin="474.293,727.954,0,-58.954" VerticalAlignment="Top" Width="2" Background="#FFD9DEE4" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+        </Border>
+        <Label Content="自动站名称：" HorizontalAlignment="Left" Margin="341.78,786.648,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="27.277" Width="112.967"/>
+        <Label Content="N/A" HorizontalAlignment="Left" Margin="436.116,786.648,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="27.277" Width="191.467"/>
+        <Label Content="自动站地址：" HorizontalAlignment="Left" Margin="341.78,829.648,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="27.277" Width="112.967"/>
+        <Label Content="N/A" HorizontalAlignment="Left" Margin="436.116,829.648,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="27.277" Width="191.467"/>
+        <Label Content="负责人：" HorizontalAlignment="Left" Margin="341.78,874.648,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="27.277" Width="112.967"/>
+        <Label Content="N/A" HorizontalAlignment="Left" Margin="436.116,874.648,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="27.277" Width="191.467"/>
+        <Border BorderBrush="#FFF7F7F7" BorderThickness="1" HorizontalAlignment="Left" Height="277" Margin="814.293,680.954,0,-11.954" VerticalAlignment="Top" Width="2" Background="#FFD9DEE4" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+        </Border>
+        <Border BorderBrush="#FFF7F7F7" BorderThickness="1" HorizontalAlignment="Left" Height="277" Margin="814.293,727.954,0,-58.954" VerticalAlignment="Top" Width="2" Background="#FFD9DEE4" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+        </Border>
+        <Label Content="联系电话：" HorizontalAlignment="Left" Margin="682.162,786.648,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="27.277" Width="112.967"/>
+        <Label Content="N/A" HorizontalAlignment="Left" Margin="796.658,786.648,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="27.277" Width="150.621"/>
+        <Label Content="自动站版本号：" HorizontalAlignment="Left" Margin="682.162,829.648,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="27.277" Width="112.967"/>
+        <Label Content="全自动站V1.0" HorizontalAlignment="Left" Margin="795.129,829.648,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="27.277" Width="172.836"/>
+        <Label Content="承办公司：" HorizontalAlignment="Left" Margin="682.162,874.648,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="27.277" Width="112.967"/>
+        <Label Content="北京中检维康技术有限公司" HorizontalAlignment="Left" Margin="776.498,874.648,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="27.277" Width="191.467"/>
+        <Label Content="内部温度：" HorizontalAlignment="Left" Margin="498.725,430.493,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" Foreground="#FF73879C" Height="27.277" Width="79.59"/>
+        <Label x:Name="PG1_safetmp_label"  DataContext="{Binding Source={StaticResource xml_SafeDate}}" Content="{Binding XPath=tmp_value}" HorizontalAlignment="Left" Margin="578.246,426.105,0,0" VerticalAlignment="Top" FontSize="18.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" FontWeight="Bold" Foreground="#FFE95E4F" Height="31.227" Width="91.754"/>
+        <Label Content="内部湿度：" HorizontalAlignment="Left" Margin="498.725,396.342,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" Foreground="#FF73879C" Height="27.277" Width="80.573"/>
+        <Label x:Name="PG1_safewet_label"  DataContext="{Binding Source={StaticResource xml_SafeDate}}" Content="{Binding XPath=wet_value}" HorizontalAlignment="Left" Margin="578.246,390.906,0,0" VerticalAlignment="Top" FontSize="18.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" FontWeight="Bold" Foreground="#FFE95E4F" Height="31.919" Width="91.754"/>
+        <Label Content="供电方式：" HorizontalAlignment="Left" Margin="759.308,359.16,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" Foreground="#FF73879C" Height="27.277" Width="80.573"/>
+        <Label x:Name="page1_UPS_type_label" Content="N/A" HorizontalAlignment="Left" Margin="831.308,359.16,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" Foreground="#FF73879C" Height="27.277" Width="80.573"/>
+        <Label Content="剩余时间：" HorizontalAlignment="Left" Margin="759.308,387.16,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" Foreground="#FF73879C" Height="27.277" Width="80.573"/>
+        <Label x:Name="page1_UPS_time_label" DataContext="{Binding Source={StaticResource xml_UPSDate}}" Content="{Binding XPath=剩余时间}" HorizontalAlignment="Left" Margin="831.308,387.16,0,0" VerticalAlignment="Top" FontSize="14.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" Foreground="#FF73879C" Height="27.277" Width="80.573"/>
+        <TextBlock x:Name="page1_labr3_nuclide" HorizontalAlignment="Left" Margin="32,434,0,0" TextWrapping="Wrap" DataContext="{Binding Source={StaticResource xml_SARADate}}" Text="{Binding XPath=nuclide_name}" VerticalAlignment="Top" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" Height="58" Width="244" FontSize="23" Foreground="#FF73879C" FontWeight="Bold" TextAlignment="Center"/>
+        <TextBlock x:Name="textBlock_rs131_value" HorizontalAlignment="Left" Margin="85,49.774,0,0" TextWrapping="Wrap" Text="{Binding Path=Doserate}" VerticalAlignment="Top" Foreground="#FFE95E4F" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontSize="40" FontWeight="Bold" Width="186.91" TextAlignment="Right"/>
+        <TextBlock x:Name="textBlock_rs131_datetime" HorizontalAlignment="Left" Height="18" Margin="195,121,0,0" TextWrapping="Wrap"  DataContext="{Binding Source={StaticResource xml_RS131Date}}" Text="{Binding XPath=datetime}" VerticalAlignment="Top" Width="167" Foreground="#FF73879C" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" FontSize="14" FontWeight="Bold" TextAlignment="Center" TextOptions.TextHintingMode="Animated" />
+        <TextBlock x:Name="textBlock_rs131_unit" HorizontalAlignment="Left" Margin="271.91,63.005,0,0" TextWrapping="Wrap" Text="nGy/h" VerticalAlignment="Top" Foreground="#FF73879C" FontSize="21.333" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontWeight="Bold" TextAlignment="Center" Width="77.09" Height="26.995"/>
+        <TextBlock x:Name="textBlock_rs131_statue" HorizontalAlignment="Left" Margin="167.127,121.119,0,0" TextWrapping="Wrap" Text="N/A" VerticalAlignment="Top" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" Foreground="#FFE95E4F" FontSize="14" FontWeight="Bold"/>
+        <Label x:Name="tmp_unit"  Content="℃" HorizontalAlignment="Left" Margin="594,44,0,0" VerticalAlignment="Top" FontSize="18.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" FontWeight="Bold" Foreground="#FF73879C" Height="31" Width="30" VerticalContentAlignment="Center"/>
+        <Label x:Name="tmp_unit_Copy" Content="m/s" HorizontalAlignment="Left" Margin="733,45,0,0" VerticalAlignment="Top" FontSize="18.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" FontWeight="Bold" Foreground="#FF73879C" Height="31" Width="47" VerticalContentAlignment="Center"/>
+        <Label x:Name="tmp_unit_Copy1"  Content="mm" HorizontalAlignment="Left" Margin="600,82,0,0" VerticalAlignment="Top" FontSize="18.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" FontWeight="Bold" Foreground="#FF73879C" Height="31" Width="47" VerticalContentAlignment="Center"/>
+        <Label x:Name="tmp_unit_Copy2"  Content="hPa" HorizontalAlignment="Left" Margin="753,82,0,0" VerticalAlignment="Top" FontSize="18.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" FontWeight="Bold" Foreground="#FF73879C" Height="31" Width="47" VerticalContentAlignment="Center"/>
+        <Label x:Name="tmp_unit_Copy3"  Content="%" HorizontalAlignment="Left" Margin="881,82,0,0" VerticalAlignment="Top" FontSize="18.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" FontWeight="Bold" Foreground="#FF73879C" Height="31" Width="27" VerticalContentAlignment="Center"/>
+        <Label x:Name="tmp_unit_Copy4"  Content="m3/h" HorizontalAlignment="Left" Margin="244,234,0,0" VerticalAlignment="Top" FontSize="18.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" FontWeight="Bold" Foreground="#FF73879C" Height="31" Width="66" VerticalContentAlignment="Center"/>
+        <Label x:Name="tmp_unit_Copy5"  Content="m3" HorizontalAlignment="Left" Margin="398,234,0,0" VerticalAlignment="Top" FontSize="18.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" FontWeight="Bold" Foreground="#FF73879C" Height="31" Width="47" VerticalContentAlignment="Center"/>
+        <Label x:Name="tmp_unit_Copy6"  Content="m3/h" HorizontalAlignment="Left" Margin="731,234,0,0" VerticalAlignment="Top" FontSize="18.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" FontWeight="Bold" Foreground="#FF73879C" Height="31" Width="66" VerticalContentAlignment="Center"/>
+        <Label x:Name="tmp_unit_Copy7"  Content="m3" HorizontalAlignment="Left" Margin="885,234,0,0" VerticalAlignment="Top" FontSize="18.667" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" FontWeight="Bold" Foreground="#FF73879C" Height="31" Width="47" VerticalContentAlignment="Center"/>
+    </Grid>
+</Page>

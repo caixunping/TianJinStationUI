@@ -1,0 +1,312 @@
+﻿<Page
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:ig="http://schemas.infragistics.com/xaml"
+	xmlns:Custom="http://infragistics.com/Windows" xmlns:Custom1="http://infragistics.com/Themes" xmlns:Custom2="http://infragistics.com/DataPresenter"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+	x:Class="MainUI.RS131"
+	x:Name="Page"
+	WindowTitle="Page"
+	FlowDirection="LeftToRight"
+	Width="990" Height="946"
+	WindowWidth="640" WindowHeight="480">
+
+    <Grid x:Name="LayoutRoot" Margin="-1,0,1,0">
+        <Rectangle Fill="#FFF5F4F4" HorizontalAlignment="Left" Height="133.5" Margin="10,0,0,0" Stroke="#FFAFAFAF" VerticalAlignment="Top" Width="225.5" RadiusY="16" RadiusX="16"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="133.5" Margin="251.5,0,0,0" Stroke="#FFAFAFAF" VerticalAlignment="Top" Width="225.5" RadiusX="16" RadiusY="16"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="133.5" Margin="494.5,0,0,0" Stroke="#FFAFAFAF" VerticalAlignment="Top" Width="225.5" RadiusX="16" RadiusY="16"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="133.5" Margin="737.5,0,0,0" Stroke="#FFAFAFAF" VerticalAlignment="Top" Width="225.5" RadiusX="16" RadiusY="16"/>
+        <Label Content="剂量率" HorizontalAlignment="Left" Margin="30,9.5,0,0" VerticalAlignment="Top" FontSize="16" Foreground="#FF73879C"/>
+        <Label Content="Gamma计高压" HorizontalAlignment="Left" Margin="270,9.5,0,0" VerticalAlignment="Top" FontSize="16" Foreground="#FF73879C"/>
+        <Label Content="V" HorizontalAlignment="Left" Margin="407.114,58.761,0,0" VerticalAlignment="Top" FontSize="21.333" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontWeight="Bold" Foreground="#FF73879C" Height="35.127" Width="27.77"/>
+        <Label Content="电池电压" HorizontalAlignment="Left" Margin="514,9.5,0,0" VerticalAlignment="Top" FontSize="16" Foreground="#FF73879C"/>
+        <Label Content="V" HorizontalAlignment="Left" Margin="650.614,56.761,0,0" VerticalAlignment="Top" FontSize="21.333" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontWeight="Bold" Foreground="#FF73879C" Height="35.127" Width="27.77"/>
+        <Label Content="仪器温度" HorizontalAlignment="Left" Margin="756,9.5,0,0" VerticalAlignment="Top" FontSize="16" Foreground="#FF73879C"/>
+        <Label Content="℃" HorizontalAlignment="Left" Margin="888.614,56.761,0,0" VerticalAlignment="Top" FontSize="21.333" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontWeight="Bold" Foreground="#FF73879C" Height="35.127" Width="36.77"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="784.5" Margin="10,151.5,0,0" VerticalAlignment="Top" Width="953" Background="White"/>
+        <Border BorderBrush="#FFF7F7F7" BorderThickness="1" HorizontalAlignment="Left" Height="933.822" Margin="489.244,-261.474,0,0" VerticalAlignment="Top" Width="3.91" Background="#FFD9DEE4" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+        </Border>
+        <Label Content="曲线与数据" HorizontalAlignment="Left" Margin="31.5,166.5,0,0" VerticalAlignment="Top" FontSize="24" Foreground="#FF73879C" FontFamily="/MainUI;component/Fonts/#San Francisco Display"/>
+        <Label Content="包括实时数据与历史数据" HorizontalAlignment="Left" Margin="166.5,175.92,0,0" VerticalAlignment="Top" FontSize="16" Foreground="#FF7C7C7C" FontFamily="/MainUI;component/Fonts/#San Francisco Display"/>
+        <Custom:XamTabControl Margin="31.5,211.267,39.116,19.5" Background="{x:Null}">
+            <Custom:XamTabControl.BorderBrush>
+                <SolidColorBrush Color="White" Custom1:ResourceWasher.WashGroup="Selected"/>
+            </Custom:XamTabControl.BorderBrush>
+            <Custom:TabItemEx x:Name="tabItemEx1" Header="实时数据" Width="447" FontSize="16" Background="{x:Null}" Foreground="#FF73879C" FontFamily="/MainUI;component/Fonts/#San Francisco Display">
+                <Custom:TabItemEx.BorderBrush>
+                    <SolidColorBrush Color="White" Custom1:ResourceWasher.WashGroup="BaseColor"/>
+                </Custom:TabItemEx.BorderBrush>
+                <Grid>
+                    <ig:XamDataChart x:Name="rs131pg_live_line" Margin="0,0,0,420" WindowRectChanged="rs131pg_live_line_WindowRectChanged" HorizontalZoomable="True" VerticalZoomable="True" CrosshairVisibility="Visible">
+                        <ig:XamDataChart.Axes>
+                            <ig:CategoryDateTimeXAxis x:Name="XmXAxis" 
+                                          DateTimeMemberPath="Label" 
+                                          ItemsSource="{Binding}" Margin="-52,0,0,2" 
+                                                      Label="{}{Date:yyyy-MM-dd HH:mm:ss}" 
+                                        >
+                                <ig:CategoryDateTimeXAxis.LabelSettings>
+                                    <ig:AxisLabelSettings HorizontalAlignment="Center" />
+                                </ig:CategoryDateTimeXAxis.LabelSettings>
+                            </ig:CategoryDateTimeXAxis>
+                            <ig:NumericYAxis x:Name="XmYAxisPrice" MaximumValue="200" MinimumValue="0"
+                                 />
+                        </ig:XamDataChart.Axes>
+                        <ig:XamDataChart.Series>
+
+                            <ig:AreaSeries Thickness="1"
+                    			MarkerType="None"
+                    			ItemsSource="{Binding}" 
+                    			ValueMemberPath="Value"
+                    			XAxis="{Binding ElementName=XmXAxis}"
+                    			YAxis="{Binding ElementName=XmYAxisPrice}"
+                    			IsHighlightingEnabled="True"
+                    			IsTransitionInEnabled="True" IsManipulationEnabled="True" ShowDefaultTooltip="True" Title="剂量率">
+
+                                <ig:AreaSeries.ToolTip >
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+
+                                    </Grid>
+                                </ig:AreaSeries.ToolTip>
+                            </ig:AreaSeries>
+
+                            <ig:ItemToolTipLayer UseInterpolation="False" Panel.ZIndex="1"
+                    			TransitionDuration="0:00:00.1" ItemsSource="{Binding}" />
+                        </ig:XamDataChart.Series>
+                    </ig:XamDataChart>
+                    <ig:XamZoombar x:Name="xmZoombar" HorizontalAlignment="Left" Margin="0,264,0,0" VerticalAlignment="Top" Height="75" ZoomChanged="xmZoombar_ZoomChanged">
+                        <ig:XamZoombar.HorizontalPreviewContent>
+                            <ig:XamDataChart x:Name="rs131pg_live_line2"
+                                             Margin="4"
+                                 HorizontalZoombarVisibility="Collapsed"
+                                 HorizontalZoomable="True"
+                                 VerticalZoomable="False"
+                                 VerticalZoombarVisibility="Collapsed"
+                                 IsHitTestVisible="False"
+                                 IsTabStop="False"                                                                                                                                   
+                                             >
+                                <ig:XamDataChart.Axes>
+                                    <ig:CategoryDateTimeXAxis x:Name="XmXAxis2" 
+                                          DateTimeMemberPath="Label" 
+                                          ItemsSource="{Binding}" Margin="0,0,0,5" 
+                                        >
+                                        <ig:CategoryDateTimeXAxis.LabelSettings>
+                                            <ig:AxisLabelSettings Location="OutsideBottom" HorizontalAlignment="Center" Visibility="Collapsed" />
+                                        </ig:CategoryDateTimeXAxis.LabelSettings>
+                                    </ig:CategoryDateTimeXAxis>
+                                    <ig:NumericYAxis x:Name="XmYAxisPrice2"
+                                 >
+
+                                        <ig:NumericYAxis.LabelSettings>
+                                            <ig:AxisLabelSettings Location="OutsideRight" HorizontalAlignment="Center" Visibility="Collapsed" />
+                                        </ig:NumericYAxis.LabelSettings>
+                                    </ig:NumericYAxis>
+                                </ig:XamDataChart.Axes>
+                                <ig:XamDataChart.Series>
+                                    <ig:AreaSeries Thickness="1"
+                                 MarkerType="None"
+                                 ItemsSource="{Binding}" 
+                                 ValueMemberPath="Value"
+                                 XAxis="{Binding ElementName=XmXAxis2}"
+                                 YAxis="{Binding ElementName=XmYAxisPrice2}"
+                                 IsHighlightingEnabled="True"
+                                 IsTransitionInEnabled="True"/>
+                                </ig:XamDataChart.Series>
+                            </ig:XamDataChart>
+
+                        </ig:XamZoombar.HorizontalPreviewContent>
+                    </ig:XamZoombar>
+                    <Border BorderThickness="1" Height="934.529" Margin="447.5,-119.643,0,-135.5" VerticalAlignment="Top" Background="#FF898C95" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="3.887">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                    </Border>
+
+                    <Custom2:XamDataGrid x:Name="rs131pg_live_grid" HorizontalAlignment="Left" Margin="0,359.886,0,0" VerticalAlignment="Top" Height="319.5" Width="909.384" AutoFit="True" IsSynchronizedWithCurrentItem="True" GroupByAreaLocation="None" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
+                        <Custom2:XamDataGrid.Background>
+                            <ImageBrush ImageSource="12.png"/>
+                        </Custom2:XamDataGrid.Background>
+                        <Custom2:XamDataGrid.FieldLayoutSettings>
+                            <Custom2:FieldLayoutSettings AllowFieldMoving="No" AutoGenerateFields="True" AutoArrangeMaxColumns="-1" AutoArrangeMaxRows="-1" AllowDelete="False" AllowAddNew="False"/>
+                        </Custom2:XamDataGrid.FieldLayoutSettings>
+                        <Custom2:XamDataGrid.ViewSettings>
+                            <Custom2:GridViewSettings/>
+                        </Custom2:XamDataGrid.ViewSettings>
+                        <Custom2:XamDataGrid.FieldSettings>
+                            <Custom2:FieldSettings AllowEdit="False" AllowFixing="No" AllowResize="True"/>
+                        </Custom2:XamDataGrid.FieldSettings>
+                    </Custom2:XamDataGrid>
+                </Grid>
+            </Custom:TabItemEx>
+            <Custom:TabItemEx x:Name="tabItemEx1_Copy" Header="历史数据" Margin="0.309,0,-0.381,0" Width="447" FontSize="16" Background="White" Foreground="#FF73879C" FontFamily="/MainUI;component/Fonts/#San Francisco Display">
+                <Custom:TabItemEx.BorderBrush>
+                    <SolidColorBrush Color="White" Custom1:ResourceWasher.WashGroup="BaseColor"/>
+                </Custom:TabItemEx.BorderBrush>
+                <Grid>
+                    <ig:XamDataChart x:Name="rs131pg_his_line" Margin="0,81.886,0,356" WindowRectChanged="rs131pg_his_line_WindowRectChanged" HorizontalZoomable="True" VerticalZoomable="True" CrosshairVisibility="Visible">
+                        <ig:XamDataChart.Axes>
+                            <ig:CategoryDateTimeXAxis x:Name="XmXAxis1" 
+                                DateTimeMemberPath="Label" 
+                                ItemsSource="{Binding Path=data2}" Margin="-52,0,0,2" 
+                                Label="{}{Date:yyyy-MM-dd HH:mm:ss}" 
+                                        >
+                                <ig:CategoryDateTimeXAxis.LabelSettings>
+                                    <ig:AxisLabelSettings HorizontalAlignment="Center" />
+                                </ig:CategoryDateTimeXAxis.LabelSettings>
+                            </ig:CategoryDateTimeXAxis>
+                            <ig:NumericYAxis x:Name="XmYAxisPrice1" MaximumValue="200" MinimumValue="0"
+                                 />
+                        </ig:XamDataChart.Axes>
+                        <ig:XamDataChart.Series>
+
+                            <ig:AreaSeries Thickness="1"
+                                MarkerType="None"
+                                ItemsSource="{Binding}" 
+                                ValueMemberPath="Value"
+                                XAxis="{Binding ElementName=XmXAxis}"
+                                YAxis="{Binding ElementName=XmYAxisPrice}"
+                                IsHighlightingEnabled="True"
+                                IsTransitionInEnabled="True" IsManipulationEnabled="True" ShowDefaultTooltip="True" Title="剂量率">
+
+                                <ig:AreaSeries.ToolTip >
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+
+                                    </Grid>
+                                </ig:AreaSeries.ToolTip>
+                            </ig:AreaSeries>
+
+                            <ig:ItemToolTipLayer UseInterpolation="False" Panel.ZIndex="1"
+                                TransitionDuration="0:00:00.1" ItemsSource="{Binding}" />
+                        </ig:XamDataChart.Series>
+                    </ig:XamDataChart>
+                    <ig:XamZoombar x:Name="xmZoombar_his" HorizontalAlignment="Left" Margin="0,327,0,276.386" ZoomChanged="xmZoombar_his_ZoomChanged">
+                        <ig:XamZoombar.HorizontalPreviewContent>
+                            <ig:XamDataChart x:Name="rs131pg_his_line2"
+                                Margin="4"
+                                HorizontalZoombarVisibility="Collapsed"
+                                HorizontalZoomable="True"
+                                VerticalZoomable="False"
+                                VerticalZoombarVisibility="Collapsed"
+                                IsHitTestVisible="False"
+                                IsTabStop="False"                                                                                                                                   
+                                             >
+                                <ig:XamDataChart.Axes>
+                                    <ig:CategoryDateTimeXAxis x:Name="XmXAxis3" 
+                                        DateTimeMemberPath="Label" 
+                                        ItemsSource="{Binding}" Margin="0,0,0,5" 
+                                        >
+                                        <ig:CategoryDateTimeXAxis.LabelSettings>
+                                            <ig:AxisLabelSettings Location="OutsideBottom" HorizontalAlignment="Center" Visibility="Collapsed" />
+                                        </ig:CategoryDateTimeXAxis.LabelSettings>
+                                    </ig:CategoryDateTimeXAxis>
+                                    <ig:NumericYAxis x:Name="XmYAxisPrice3"
+                                 >
+
+                                        <ig:NumericYAxis.LabelSettings>
+                                            <ig:AxisLabelSettings Location="OutsideRight" HorizontalAlignment="Center" Visibility="Collapsed" />
+                                        </ig:NumericYAxis.LabelSettings>
+                                    </ig:NumericYAxis>
+                                </ig:XamDataChart.Axes>
+                                <ig:XamDataChart.Series>
+                                    <ig:AreaSeries Thickness="1"
+                                        MarkerType="None"
+                                        ItemsSource="{Binding}" 
+                                        ValueMemberPath="Value"
+                                        XAxis="{Binding ElementName=XmXAxis2}"
+                                        YAxis="{Binding ElementName=XmYAxisPrice2}"
+                                        IsHighlightingEnabled="True"
+                                        IsTransitionInEnabled="True"/>
+                                </ig:XamDataChart.Series>
+                            </ig:XamDataChart>
+
+                        </ig:XamZoombar.HorizontalPreviewContent>
+                    </ig:XamZoombar>
+                    <Border BorderThickness="1" Height="934.529" Margin="447.5,-56.643,0,-199.5" VerticalAlignment="Top" Background="#FF898C95" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="3.887">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                    </Border>
+                    <Custom2:XamDataGrid x:Name="rs131pg_his_grid" HorizontalAlignment="Left" Margin="0,421.886,0,-1" VerticalAlignment="Top" Height="257.5" Width="909.384" AutoFit="True" IsSynchronizedWithCurrentItem="True" GroupByAreaLocation="None" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
+                        <Custom2:XamDataGrid.Background>
+                            <ImageBrush ImageSource="12.png" Stretch="UniformToFill"/>
+                        </Custom2:XamDataGrid.Background>
+                        <Custom2:XamDataGrid.FieldLayoutSettings>
+                            <Custom2:FieldLayoutSettings AllowFieldMoving="No" AutoGenerateFields="True" AutoArrangeMaxColumns="-1" AutoArrangeMaxRows="-1" AllowDelete="False" AllowAddNew="False"/>
+                        </Custom2:XamDataGrid.FieldLayoutSettings>
+                        <Custom2:XamDataGrid.ViewSettings>
+                            <Custom2:GridViewSettings/>
+                        </Custom2:XamDataGrid.ViewSettings>
+                        <Custom2:XamDataGrid.FieldSettings>
+                            <Custom2:FieldSettings AllowEdit="False" AllowFixing="No" AllowResize="True"/>
+                        </Custom2:XamDataGrid.FieldSettings>
+                    </Custom2:XamDataGrid>
+                    <DatePicker x:Name="ups_startdate_picker" HorizontalAlignment="Left" Margin="-3.224,37.679,0,0" VerticalAlignment="Top" Width="179.838" SelectedDateFormat="Long" DisplayDate="2017-03-06" Height="24" d:LayoutOverrides="HorizontalAlignment"/>
+                    <Label Content="Step 1:选择开始日期" HorizontalAlignment="Left" Margin="3.909,3.832,0,0" VerticalAlignment="Top" FontSize="16" Foreground="#FF7C7C7C" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Height="28.847" Width="158.5" d:LayoutOverrides="HorizontalAlignment"/>
+                    <Label Content="Step 2:输入开始时间" HorizontalAlignment="Left" Margin="210,3.832,0,0" VerticalAlignment="Top" FontSize="16" Foreground="#FF7C7C7C" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Height="28.847" Width="158.5" d:LayoutOverrides="HorizontalAlignment"/>
+                    <TextBox x:Name="ups_his_start_hour" HorizontalAlignment="Left" Height="23" Margin="221.507,37.679,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="56"/>
+                    <Label Content=":" HorizontalAlignment="Left" Margin="278.505,30.506,0,0" VerticalAlignment="Top" FontSize="16" Foreground="#FF7C7C7C" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Height="28.847" Width="13" d:LayoutOverrides="HorizontalAlignment"/>
+                    <TextBox x:Name="ups_his_start_minute" HorizontalAlignment="Left" Height="23" Margin="292.5,37.679,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="56" d:LayoutOverrides="HorizontalAlignment"/>
+                    <Label Content="Step 3:选择结束时间" HorizontalAlignment="Left" Margin="415.24,3.512,0,0" VerticalAlignment="Top" FontSize="16" Foreground="#FF7C7C7C" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Height="28.847" Width="158.5"/>
+                    <DatePicker x:Name="ups_enddate_picker" HorizontalAlignment="Left" Margin="405.74,37.679,0,0" VerticalAlignment="Top" Width="179.838" Height="24"/>
+                    <Label Content="Step 4:输入结束时间" HorizontalAlignment="Left" Margin="628.5,3.832,0,0" VerticalAlignment="Top" FontSize="16" Foreground="#FF7C7C7C" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Height="28.847" Width="158.5"/>
+                    <TextBox x:Name="ups_his_end_hour" HorizontalAlignment="Right" Height="23" Margin="0,37.679,210.877,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="56"/>
+                    <Label Content=":" HorizontalAlignment="Left" Margin="699.505,30.506,0,0" VerticalAlignment="Top" FontSize="16" Foreground="#FF7C7C7C" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Height="28.847" Width="13"/>
+                    <TextBox x:Name="ups_his_end_minute" HorizontalAlignment="Left" Height="23" Margin="713.5,37.679,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="56"/>
+                    <Border BorderBrush="#FF444242" BorderThickness="1" HorizontalAlignment="Left" Height="55.521" Margin="195.37,7.332,0,0" VerticalAlignment="Top" Width="1.869" Background="Gray" RenderTransformOrigin="0.5,0.5"/>
+                    <Border BorderBrush="#FF444242" BorderThickness="1" HorizontalAlignment="Left" Height="55.521" Margin="380.37,7.332,0,0" VerticalAlignment="Top" Width="1.869" Background="Gray" RenderTransformOrigin="0.5,0.5"/>
+                    <Border BorderBrush="#FF444242" BorderThickness="1" Height="55.521" Margin="0,7.332,296.645,0" VerticalAlignment="Top" Background="Gray" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" Width="1.869"/>
+                    <Border BorderBrush="#FF444242" BorderThickness="1" Height="55.521" Margin="0,7.332,106.645,0" VerticalAlignment="Top" Background="Gray" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" Width="1.869"/>
+                    <Button x:Name="button" Content="查询" HorizontalAlignment="Right" Height="39.554" Margin="0,16.003,30.884,0" VerticalAlignment="Top" Width="65" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontSize="22" Foreground="Gray" Background="#FFF5F4F4" Click="button_Click"/>
+                </Grid>
+            </Custom:TabItemEx>
+        </Custom:XamTabControl>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="934.654" Margin="489.659,-228.768,0,0" VerticalAlignment="Top" Width="3.913" Background="#FF898C95" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+        </Border>
+        <TextBlock x:Name="textBlock_PGRS131_doserate_value" HorizontalAlignment="Left" Height="43.888" Margin="13.918,50,0,0" TextWrapping="Wrap" Text="N/A" VerticalAlignment="Top" Width="129.696" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontSize="40" FontWeight="Bold" TextAlignment="Right" Foreground="#FFE95E4F"/>
+        <TextBlock x:Name="textBlock_PGRS131_datetime1" HorizontalAlignment="Left" Height="16.112" Margin="71.304,103.888,0,0" TextWrapping="Wrap" Text="0000-00-00 00:00:00" VerticalAlignment="Top" Width="144.58" Foreground="#FF73879C" TextAlignment="Center" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontSize="13.333" FontWeight="Bold" TextOptions.TextHintingMode="Animated"/>
+        <TextBlock x:Name="textBlock_PGRS131_doserate_statue" HorizontalAlignment="Left" Height="15" Margin="31.5,103.888,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="29.082" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontSize="13.333" FontWeight="Bold" Text="N/A" Foreground="#FFE95E4F"/>
+        <TextBlock x:Name="textBlock_PGRS131_unit" HorizontalAlignment="Left" Height="25" Margin="147.338,63.762,0,0" TextWrapping="Wrap" Text="nGy/h" VerticalAlignment="Top" Width="70.884" Foreground="#FF73879C" FontSize="21.333" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontWeight="Bold" TextAlignment="Center"/>
+        <TextBlock x:Name="textBlock_PGRS131_HV" HorizontalAlignment="Left" Height="43.888" Margin="277.418,50,0,0" TextWrapping="Wrap" Text="N/A" VerticalAlignment="Top" Width="129.696" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontSize="40" FontWeight="Bold" TextAlignment="Center" Foreground="#FFE95E4F"/>
+        <TextBlock x:Name="textBlock_PGRS131_HV_statue" HorizontalAlignment="Left" Height="15" Margin="277.418,103.888,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="29.082" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontSize="13.333" FontWeight="Bold" Text="N/A" Foreground="#FFE95E4F"/>
+        <TextBlock x:Name="textBlock_PGRS131_datetime2" HorizontalAlignment="Left" Height="16.112" Margin="311.5,103.888,0,0" TextWrapping="Wrap" Text="0000-00-00 00:00:00" VerticalAlignment="Top" Width="144.58" Foreground="#FF73879C" TextAlignment="Center" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontSize="13.333" FontWeight="Bold" TextOptions.TextHintingMode="Animated"/>
+        <TextBlock x:Name="textBlock_PGRS131_BV" HorizontalAlignment="Right" Height="43.888" Margin="0,50,337.667,0" TextWrapping="Wrap" Text="N/A" VerticalAlignment="Top" Width="129.696" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontSize="40" FontWeight="Bold" TextAlignment="Center" Foreground="#FFE95E4F"/>
+        <TextBlock x:Name="textBlock_PGRS131_BV_statue" Height="15" Margin="0,103.888,438.281,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontSize="13.333" FontWeight="Bold" Text="N/A" Foreground="#FFE95E4F" HorizontalAlignment="Right" Width="29.082"/>
+        <TextBlock x:Name="textBlock_PGRS131_datetime3" HorizontalAlignment="Right" Height="16.112" Margin="0,103.888,288.701,0" TextWrapping="Wrap" Text="0000-00-00 00:00:00" VerticalAlignment="Top" Width="144.58" Foreground="#FF73879C" TextAlignment="Center" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontSize="13.333" FontWeight="Bold" TextOptions.TextHintingMode="Animated"/>
+        <TextBlock x:Name="textBlock_PGRS131_TMP" HorizontalAlignment="Right" Height="43.888" Margin="0,50,101.386,0" TextWrapping="Wrap" Text="N/A" VerticalAlignment="Top" Width="129.696" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontSize="40" FontWeight="Bold" TextAlignment="Center" Foreground="#FFE95E4F"/>
+        <TextBlock x:Name="textBlock_PGRS131_TMP_statue" Height="15" Margin="0,103.888,195.696,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontSize="13.333" FontWeight="Bold" Text="N/A" Foreground="#FFE95E4F" HorizontalAlignment="Right" Width="29.082"/>
+        <TextBlock x:Name="textBlock_PGRS131_datetime4" HorizontalAlignment="Right" Height="16.112" Margin="0,103.888,46.116,0" TextWrapping="Wrap" Text="0000-00-00 00:00:00" VerticalAlignment="Top" Width="144.58" Foreground="#FF73879C" TextAlignment="Center" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontSize="13.333" FontWeight="Bold" TextOptions.TextHintingMode="Animated"/>
+    </Grid>
+</Page>

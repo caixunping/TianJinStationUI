@@ -1,0 +1,140 @@
+﻿<Page
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:Custom="http://infragistics.com/DataPresenter"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+	x:Class="MainUI.UPS"
+	x:Name="Page"
+	WindowTitle="Page"
+	FlowDirection="LeftToRight"
+	Width="990" Height="946"
+	WindowWidth="640" WindowHeight="480" Loaded="Page_Loaded">
+
+    <Grid x:Name="LayoutRoot" RenderTransformOrigin="0.51,0.46">
+        <Rectangle Fill="#FFF5F4F4" HorizontalAlignment="Left" Height="116" Margin="19.37,46,0,0" Stroke="#FFAFAFAF" VerticalAlignment="Top" Width="265.63" RadiusY="16" RadiusX="16"/>
+        <Label Content="单元电压 (Unit Voltage）" HorizontalAlignment="Left" Margin="91.646,56.296,0,0" VerticalAlignment="Top" Foreground="Gray" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontSize="13.333"/>
+        <Label x:Name="bv_UI" Content="000.0" HorizontalAlignment="Left" Margin="94.37,74.5,0,0" VerticalAlignment="Top" Foreground="Gray" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontSize="45.333" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Width="127"/>
+        <Label Content="V" HorizontalAlignment="Left" Margin="219.37,83,0,0" VerticalAlignment="Top" Foreground="Gray" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontSize="18.667"/>
+        <Label x:Name="ups_datetime_label1" Content="0000-00-00 00:00:00" HorizontalAlignment="Left" Margin="84.177,131.539,0,0" VerticalAlignment="Top" FontSize="13.333" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="25.703" Width="153.956" FontWeight="Bold"/>
+        <Rectangle Fill="#FFF5F4F4" Height="116" Stroke="#FFAFAFAF" RadiusY="16" RadiusX="16" VerticalAlignment="Top" Margin="360,46,364.37,0"/>
+        <Label Content="输入电压 (Input Voltage)" Margin="432.24,55.796,401.229,0" VerticalAlignment="Top" Foreground="Gray" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontSize="13.333" d:LayoutOverrides="Width"/>
+        <Label x:Name="ups_datetime_label2" Content="0000-00-00 00:00:00" Margin="427.787,131.039,408.119,0" VerticalAlignment="Top" FontSize="13.333" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="25.703" FontWeight="Bold"/>
+        <Image Margin="37.499,56.796,918.727,825.954" Source="Battery_charging_55.466666666667px_1197988_easyicon.net.png" Stretch="Fill"/>
+        <Rectangle Fill="#FFF5F4F4" HorizontalAlignment="Left" Margin="23.276,403.895,0,426.105" Stroke="#FFAFAFAF" Width="261.724" RadiusY="16" RadiusX="16" d:LayoutOverrides="HorizontalAlignment"/>
+        <Label Content="剩余时间（Remain Time）" HorizontalAlignment="Left" Margin="91.646,416.009,0,0" VerticalAlignment="Top" Foreground="Gray" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontSize="13.333" Width="165.45" d:LayoutOverrides="HorizontalAlignment"/>
+        <Label x:Name="RT_UI" Content="000" HorizontalAlignment="Left" Margin="93.399,432.037,0,450.566" Foreground="Gray" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontSize="45.333" d:LayoutOverrides="HorizontalAlignment, Height"/>
+        <Label Content="小时" HorizontalAlignment="Left" Margin="209.762,441.712,0,472.301" Foreground="Gray" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontSize="18.667" d:LayoutOverrides="HorizontalAlignment, Height"/>
+        <Label x:Name="ups_datetime_label3" Content="0000-00-00 00:00:00" HorizontalAlignment="Left" Margin="79.167,0,0,431.221" VerticalAlignment="Bottom" FontSize="13.333" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="25.703" Width="150.238" FontWeight="Bold" d:LayoutOverrides="HorizontalAlignment"/>
+        <Image Margin="37.499,413.895,0,489.29" Source="Time_526px_1183590_easyicon.net.png" Stretch="Fill" HorizontalAlignment="Left" Width="42.979"/>
+        <Rectangle Fill="#FFF5F4F4" HorizontalAlignment="Left" Margin="327.333,404.191,0,425.809" Stroke="#FFAFAFAF" Width="340" RadiusY="16" RadiusX="16"/>
+        <Label Content="供电状态（Power Status）" HorizontalAlignment="Left" Margin="437.299,414.191,0,0" VerticalAlignment="Top" Foreground="Gray" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontSize="13.333" Width="165.45"/>
+        <Label x:Name="PS_UI" Content="市电" HorizontalAlignment="Left" Margin="385.63,437.896,0,457.27" Foreground="Gray" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontSize="34.667" d:LayoutOverrides="Height" Width="259.37" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label x:Name="ups_datetime_label4" Content="0000-00-00 00:00:00" HorizontalAlignment="Left" Margin="437.714,0,0,430.567" VerticalAlignment="Bottom" FontSize="13.333" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="25.703" Width="151.057" FontWeight="Bold"/>
+        <Image Margin="348.333,414.987,595,484.346" Source="power_1066px_1147943_easyicon.net.png" Stretch="Fill"/>
+        <Label Content="供电输入" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="Gray" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontSize="18.667"/>
+        <Border BorderBrush="#FFF7F7F7" BorderThickness="1" HorizontalAlignment="Left" Height="985.404" Margin="491.011,-459.679,0,0" VerticalAlignment="Top" Width="2.959" Background="#FFD9DEE4" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+        </Border>
+        <Label Content="输出负载" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="Gray" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontSize="18.667" Margin="0,173,0,0"/>
+        <Border BorderBrush="#FFF7F7F7" BorderThickness="1" HorizontalAlignment="Left" Height="985.404" Margin="491.011,-286.679,0,0" VerticalAlignment="Top" Width="2.959" Background="#FFD9DEE4" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+        </Border>
+        <Rectangle Fill="#FFF5F4F4" HorizontalAlignment="Left" Height="116" Margin="19.37,224.494,0,0" Stroke="#FFAFAFAF" VerticalAlignment="Top" Width="265.63" RadiusY="16" RadiusX="16"/>
+        <Label Content="输出电压（Output Voltage）" HorizontalAlignment="Left" Margin="84.177,235.789,0,0" VerticalAlignment="Top" Foreground="Gray" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontSize="13.333"/>
+        <Label x:Name="OV_UI" Content="000.0" HorizontalAlignment="Left" Margin="92.493,252,0,0" VerticalAlignment="Top" Foreground="Gray" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontSize="45.333"/>
+        <Label Content="V" HorizontalAlignment="Left" Margin="219.37,261.493,0,0" VerticalAlignment="Top" Foreground="Gray" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontSize="18.667"/>
+        <Label x:Name="ups_datetime_label5" Content="0000-00-00 00:00:00" HorizontalAlignment="Left" Margin="84.177,308.54,0,0" VerticalAlignment="Top" FontSize="13.333" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="25.703" Width="150.387" FontWeight="Bold"/>
+        <Rectangle Fill="#FFF5F4F4" Height="116" Margin="0,224.494,20,0" Stroke="#FFAFAFAF" VerticalAlignment="Top" RadiusY="16" RadiusX="16" HorizontalAlignment="Right" Width="265.63"/>
+        <Label Content="放电电压（Unit Output）" HorizontalAlignment="Right" Margin="0,233.297,50.214,0" VerticalAlignment="Top" Foreground="Gray" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontSize="13.333"/>
+        <Label x:Name="ups_datetime_label6" Content="0000-00-00 00:00:00" HorizontalAlignment="Right" Margin="0,308.54,69.179,0" VerticalAlignment="Top" FontSize="13.333" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="25.703" Width="149.509" FontWeight="Bold"/>
+        <Rectangle Fill="#FFF5F4F4" HorizontalAlignment="Left" Height="116" Stroke="#FFAFAFAF" VerticalAlignment="Top" Width="265.63" RadiusY="16" RadiusX="16" Margin="360,224.494,0,0"/>
+        <Label Content="输出负载（Output )" HorizontalAlignment="Left" Margin="432.24,234.494,0,0" VerticalAlignment="Top" Foreground="Gray" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontSize="13.333" Width="172.45"/>
+        <Label x:Name="OC_UI" Content="00" HorizontalAlignment="Left" Margin="434.411,251.994,0,0" VerticalAlignment="Top" Foreground="Gray" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontSize="45.333" HorizontalContentAlignment="Center" Width="131" VerticalContentAlignment="Center"/>
+        <Label Content="%" HorizontalAlignment="Left" Margin="541.207,260.994,0,0" VerticalAlignment="Top" Foreground="Gray" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontSize="18.667"/>
+        <Image Margin="720.946,235.789,234.855,646.165" Source="Battery_F.png" Stretch="Fill"/>
+        <Image Margin="376.598,240.987,580,642.46" Source="Battery_A.png" Stretch="Fill"/>
+        <Image Margin="37.499,240.987,918.302,640.967" Source="Battery_V.png" Stretch="Fill"/>
+        <Label Content="工作状态" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="Gray" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontSize="18.667" Margin="0,350,0,0"/>
+        <Rectangle Fill="#FFF5F4F4" HorizontalAlignment="Right" Height="116" Margin="0,46,20,0" Stroke="#FFAFAFAF" VerticalAlignment="Top" Width="265.63" RadiusY="16" RadiusX="16"/>
+        <Border BorderBrush="#FFF7F7F7" BorderThickness="1" HorizontalAlignment="Left" Height="985.404" Margin="491.011,-109.679,0,0" VerticalAlignment="Top" Width="2.959" Background="#FFD9DEE4" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+        </Border>
+        <Label Content="历史数据" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="Gray" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontSize="18.667" Margin="0,532,0,0"/>
+        <Border BorderBrush="#FFF7F7F7" BorderThickness="1" HorizontalAlignment="Left" Height="985.404" Margin="491.011,72.321,0,-111.725" VerticalAlignment="Top" Width="2.959" Background="#FFD9DEE4" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+        </Border>
+        <Custom:XamDataGrid x:Name="UPS_grid" HorizontalAlignment="Left" Margin="0,640,0,0" VerticalAlignment="Top" Height="296" Width="980" AutoFit="True" IsSynchronizedWithCurrentItem="True" GroupByAreaLocation="None" FontFamily="/MainUI;component/Fonts/#Microsoft YaHei UI" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="{x:Null}">
+            <Custom:XamDataGrid.FieldLayoutSettings>
+                <Custom:FieldLayoutSettings AllowFieldMoving="No" AutoGenerateFields="True" AutoArrangeMaxColumns="-1" AutoArrangeMaxRows="-1" AllowDelete="False" AllowAddNew="False"/>
+            </Custom:XamDataGrid.FieldLayoutSettings>
+            <Custom:XamDataGrid.ViewSettings>
+                <Custom:GridViewSettings/>
+            </Custom:XamDataGrid.ViewSettings>
+            <Custom:XamDataGrid.FieldSettings>
+                <Custom:FieldSettings AllowEdit="False" AllowFixing="No" AllowResize="True"/>
+            </Custom:XamDataGrid.FieldSettings>
+        </Custom:XamDataGrid>
+        <Label x:Name="OV_UI_Copy" Content="000.0" HorizontalAlignment="Right" Margin="0,251.143,91.646,0" VerticalAlignment="Top" Foreground="Gray" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontSize="45.333"/>
+        <Label Content="V" HorizontalAlignment="Right" Margin="0,259,67.882,0" VerticalAlignment="Top" Foreground="Gray" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontSize="18.667"/>
+        <Label x:Name="bv_UI_Copy" Content="000.0" Margin="436.007,74,426.993,0" VerticalAlignment="Top" Foreground="Gray" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontSize="45.333" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+        <Label Content="V" HorizontalAlignment="Right" Margin="0,82.5,407.23,0" VerticalAlignment="Top" Foreground="Gray" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontSize="18.667"/>
+        <Image Margin="376.226,56.796,580,825.954" Source="Battery_charging_55.466666666667px_1197988_easyicon.net.png" Stretch="Fill"/>
+        <Label Content="输入频率 (Input Frequency)" HorizontalAlignment="Right" Margin="0,56.296,46.287,0" VerticalAlignment="Top" Foreground="Gray" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontSize="13.333"/>
+        <Label x:Name="ups_datetime_label2_Copy" Content="0000-00-00 00:00:00" HorizontalAlignment="Right" Margin="0,131.539,67.882,0" VerticalAlignment="Top" FontSize="13.333" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="25.703" Width="152.5" FontWeight="Bold"/>
+        <Label x:Name="bv_UI_Copy1" Content="00.0" HorizontalAlignment="Right" Margin="0,74.5,98.28,0" VerticalAlignment="Top" Foreground="Gray" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontSize="45.333" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Width="127"/>
+        <Label Content="Hz" HorizontalAlignment="Right" Margin="0,83,67.882,0" VerticalAlignment="Top" Foreground="Gray" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontSize="18.667"/>
+        <Image Margin="720.946,56.796,235.28,825.954" Source="Battery_charging_55.466666666667px_1197988_easyicon.net.png" Stretch="Fill"/>
+        <Rectangle Fill="#FFF5F4F4" Height="116" Margin="0,404.691,20,0" Stroke="#FFAFAFAF" VerticalAlignment="Top" RadiusY="16" RadiusX="16" HorizontalAlignment="Right" Width="265.63"/>
+        <Label Content="UPS温度（UPS Temp）" HorizontalAlignment="Right" Margin="0,414.987,50.055,0" VerticalAlignment="Top" Foreground="Gray" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontSize="13.333"/>
+        <Label x:Name="ups_datetime_label9" Content="0000-00-00 00:00:00" HorizontalAlignment="Right" Margin="0,489.076,65.101,0" VerticalAlignment="Top" FontSize="13.333" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="25.703" Width="152.125" FontWeight="Bold"/>
+        <Image Margin="720.999,413.895,234.855,468.159" Source="Battery_full_55.466666666667px_1197990_easyicon.net.png" Stretch="Fill"/>
+        <Label x:Name="US_UI" Content="00.0" HorizontalAlignment="Right" Margin="0,436.832,99.046,0" VerticalAlignment="Top" Foreground="Gray" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontSize="40"/>
+        <Label Content="℃" HorizontalAlignment="Right" Margin="0,440.037,72.282,0" VerticalAlignment="Top" Foreground="Gray" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontSize="18.667"/>
+        <Label x:Name="ups_datetime_label7" HorizontalAlignment="Left" Margin="427.787,308.54,0,0" VerticalAlignment="Top" FontSize="13.333" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Foreground="#FF73879C" Height="25.703" Width="154.094" FontWeight="Bold" Content="0000-00-00 00:00:00"/>
+        <DatePicker x:Name="ups_startdate_picker" HorizontalAlignment="Left" Margin="23.276,0,0,316.43" VerticalAlignment="Bottom" Width="179.838" SelectedDateFormat="Long" DisplayDate="2017-03-06" Height="24" d:LayoutOverrides="HorizontalAlignment"/>
+        <Label Content="Step 1:选择开始日期" HorizontalAlignment="Left" Margin="30.409,0,0,345.43" VerticalAlignment="Bottom" FontSize="16" Foreground="#FF7C7C7C" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Height="28.847" Width="158.5" d:LayoutOverrides="HorizontalAlignment"/>
+        <Label Content="Step 2:输入开始时间" HorizontalAlignment="Left" Margin="236.5,0,0,345.43" VerticalAlignment="Bottom" FontSize="16" Foreground="#FF7C7C7C" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Height="28.847" Width="158.5" d:LayoutOverrides="HorizontalAlignment"/>
+        <TextBox x:Name="ups_his_start_hour" HorizontalAlignment="Left" Height="23" Margin="248.007,0,0,317.43" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="56"/>
+        <Label Content=":" HorizontalAlignment="Left" Margin="305.005,0,0,318.756" VerticalAlignment="Bottom" FontSize="16" Foreground="#FF7C7C7C" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Height="28.847" Width="13" d:LayoutOverrides="HorizontalAlignment"/>
+        <TextBox x:Name="ups_his_start_minute" HorizontalAlignment="Left" Height="23" Margin="319,0,0,317.43" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="56" d:LayoutOverrides="HorizontalAlignment"/>
+        <Label Content="Step 3:选择结束时间" HorizontalAlignment="Left" Margin="441.74,0,0,345.75" VerticalAlignment="Bottom" FontSize="16" Foreground="#FF7C7C7C" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Height="28.847" Width="158.5"/>
+        <DatePicker x:Name="ups_enddate_picker" HorizontalAlignment="Left" Margin="432.24,0,0,316.43" VerticalAlignment="Bottom" Width="179.838" Height="24"/>
+        <Label Content="Step 4:输入结束时间" HorizontalAlignment="Left" Margin="655,0,0,345.43" VerticalAlignment="Bottom" FontSize="16" Foreground="#FF7C7C7C" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Height="28.847" Width="158.5"/>
+        <TextBox x:Name="ups_his_end_hour" HorizontalAlignment="Right" Height="23" Margin="0,0,264.993,317.43" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="56"/>
+        <Label Content=":" HorizontalAlignment="Left" Margin="726.005,0,0,318.756" VerticalAlignment="Bottom" FontSize="16" Foreground="#FF7C7C7C" FontFamily="/MainUI;component/Fonts/#San Francisco Display" Height="28.847" Width="13"/>
+        <TextBox x:Name="ups_his_end_minute" HorizontalAlignment="Left" Height="23" Margin="740,0,0,317.43" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="56"/>
+        <Border BorderBrush="#FF444242" BorderThickness="1" HorizontalAlignment="Left" Height="55.521" Margin="221.87,0,0,315.256" VerticalAlignment="Bottom" Width="1.869" Background="Gray" RenderTransformOrigin="0.5,0.5"/>
+        <Border BorderBrush="#FF444242" BorderThickness="1" HorizontalAlignment="Left" Height="55.521" Margin="406.87,0,0,315.256" VerticalAlignment="Bottom" Width="1.869" Background="Gray" RenderTransformOrigin="0.5,0.5"/>
+        <Border BorderBrush="#FF444242" BorderThickness="1" Height="55.521" Margin="0,0,350.761,315.256" VerticalAlignment="Bottom" Background="Gray" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" Width="1.869"/>
+        <Border BorderBrush="#FF444242" BorderThickness="1" Height="55.521" Margin="0,0,160.761,315.256" VerticalAlignment="Bottom" Background="Gray" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" Width="1.869"/>
+        <Button x:Name="button" Content="查询" HorizontalAlignment="Right" Height="53.347" Margin="0,0,20,317.43" VerticalAlignment="Bottom" Width="120" FontFamily="/MainUI;component/Fonts/#San Francisco Display" FontSize="22" Foreground="Gray" Background="#FFF5F4F4" Click="button_Click"/>
+    </Grid>
+</Page>
